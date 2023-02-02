@@ -150,6 +150,7 @@ const Home: NextPage = () => {
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
                       .split("2.")
+                      .slice(0, 3)
                       .map((generatedBio) => {
                         return (
                           <div
