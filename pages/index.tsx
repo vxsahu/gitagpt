@@ -21,10 +21,10 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `Generate 3 Funny instagram bios with no hashtags and clearly labeled "1." and "2.". Make sure there is a joke in there and it's a little ridiculous. Make sure each generated bio is at max 20 words and base it on this context: ${bio}${
+      ? `Generate Funny instagram bios with no hashtags and Make sure there is a joke in there and it's a little ridiculous. Make sure each generated bio is at max 20 words and base it on this context: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-      : `Generate 3 ${vibe} instagram bios with no hashtags and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
+      : `Generate ${vibe} instagram bios with no hashtags and clearly labeled and Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
-                      .substring(generatedBios.indexOf("1") + 2)
+                      .substring(generatedBios.indexOf("5") + 2)
                       .split("3.")
                       .map((generatedBio) => {
                         return (
