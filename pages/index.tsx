@@ -26,6 +26,9 @@ const Home: NextPage = () => {
         }`
       : `Generate ${vibe} Instagram bios with no hashtags and clearly labeled, and Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
           bio.slice(-1) === "." ? "" : "."
+        }`
+      : `Generate ${vibe} Instagram bios with no hashtags and clearly labeled, and Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
+          bio.slice(-1) === "." ? "" : "."
         }`;
 
   const generateBio = async (e: any) => {
