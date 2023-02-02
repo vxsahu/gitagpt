@@ -69,17 +69,6 @@ const Home: NextPage = () => {
 
   return (
     
-   const generateBio = () => {
-  // code to generate a bio based on the prompt
-};
-
-const bios = [];
-for (let i = 0; i < 3; i++) {
-  bios.push(generateBio());
-}
-
-console.log(bios);
-    
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
         <title>Instagram Bio Generator</title>
@@ -161,8 +150,7 @@ console.log(bios);
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
-                      .split("3.")
-                      .slice(0, 3)
+                      .split("2.")
                       .map((generatedBio) => {
                         return (
                           <div
