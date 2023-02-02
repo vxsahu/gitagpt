@@ -77,7 +77,7 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-        <h1 className="sm:text-6xl text-xl max-w-2xl font-bold text-slate-900">
+        <h1 className="sm:text-4xl text-xl max-w-2xl font-bold text-slate-900">
           Generate your next Instagram bio in seconds
         </h1>
         <div className="max-w-xl w-full">
