@@ -22,10 +22,10 @@ const Home: NextPage = () => {
   const prompt =
     vibe === "Funny"
       ? `Generate 2 funny twitter bios with no hashtags and clearly labeled "1." and "2.". Make sure there is a joke in there and it's a little ridiculous. Make sure each generated bio is at max 20 words and base it on this context: ${bio}${
-          bio.slice(-2) === "." ? "" : "."
+          bio.slice(-1) === "." ? "" : "."
         }`
       : `Generate 2 ${vibe} twitter bios with no hashtags and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
-          bio.slice(-2) === "." ? "" : "."
+          bio.slice(-1) === "." ? "" : "."
         }`;
 
   const generateBio = async (e: any) => {
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
-                      .substring(generatedBios.indexOf("1") + 3)
+                      .substring(generatedBios.indexOf("3") + 1)
                       .split("3.")
                       .map((generatedBio) => {
                         return (
