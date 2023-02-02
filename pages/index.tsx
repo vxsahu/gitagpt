@@ -22,7 +22,7 @@ const Home: NextPage = () => {
   const prompt =
     vibe === "Funny"
       ? `Generate 5 Funny instagram bios with no hashtags and clearly labeled "1." and "2.". Make sure there is a joke in there and it's a little ridiculous. Make sure each generated bio is at max 20 words and base it on this context: ${bio}${
-          bio.slice(-1) === "." ? "" : "."
+          bio.slice(-4) === "." ? "" : "."
         }`
       : `Generate 5 ${vibe} instagram bios with no hashtags and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
           bio.slice(-1) === "." ? "" : "."
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
             rows={4}
             className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
             placeholder={
-              "e.g. Digital Marketing Expert. Writing about SEO, Web development, AI, and React / Next.js"
+              "I'm Digital Marketing Expert. Writing about SEO, Web development, AI, and React / Next.js"
             }
           />
           <div className="flex mb-5 items-center space-x-3">
