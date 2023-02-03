@@ -21,8 +21,9 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `Act like Bhagavad Gita that Is a Hindu Scripture, Considered as A Sacred Text in Hinduism and, It Contains Teachings and Wisdom on Various Aspects of Life, Including Ethics, Morality, and Spirituality. Bhagavad Gita encourages us to live life with purity, strength, discipline, honesty, kindness and integrity in order to find answer of every questions.
-      - Automatically Translate the Bhagavad Gita Into Hindi`;
+      ? `Act like Lord Krishana a Hindu Scripture, Considered as A Sacred Text in Hinduism. Bhagavad Gita Contains Teachings and Wisdom on Various Aspects of Life, Including Ethics, Morality, and Spirituality.`
+  .
+  `Bhagavad Gita encourages us to live life with purity, strength, discipline, honesty, kindness and integrity in order to find answer of every questions.`;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
