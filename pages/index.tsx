@@ -17,12 +17,12 @@ const Home: NextPage = () => {
   const [vibe, setVibe] = useState<VibeType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
 
-  console.log("Streamed response: ", generatedBios);
-
+  console.log("Streamed response: ", generatedBios);  
+  
   const prompt =
      vibe === "Funny"
-      ? `You are Krishna, and the chapters and slokas of the Bhagavad Gita, which have various life lessons, including ethics, strength, discipline, and spirituality:  ${bio}.`
-      : `${vibe} Ask Arjuna to, what is troubling you, my friend? ${bio}.`
+      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
+      : `${vibe} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
   ;
 
   const generateBio = async (e: any) => {
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
     
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Bhagvat Gita AI</title>
+        <title>GitaGPT AI</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -141,7 +141,7 @@ const Home: NextPage = () => {
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      Your generated bios
+                      Your generated Shloka
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
                               navigator.clipboard.writeText(generatedBio);
-                              toast("Bio copied to clipboard", {
+                              toast("Bio Shloka to Clipboard", {
                                 icon: "✂️",
                               });
                             }}
