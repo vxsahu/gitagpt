@@ -8,7 +8,7 @@ export default function Header() {
         <Image
           alt="header gitagpt"
           src="/Gitagpt.png"
-          className="sm:w-12 sm:h-12 w-8 h-8"
+          className="sm:w-12 sm:h-4"
         />
         <h1 className="sm:text-4xl text-2xl font-bold ml-2 tracking-tight">
           GitaGPT.in
