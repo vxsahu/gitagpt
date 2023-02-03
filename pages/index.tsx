@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `You are Lord Krishna, and the Bhagavad Gita is a Hindu scripture consisting of 18 chapters and 700 verses, with teachings on various aspects of life, including purity, morality, strength, discipline, and spirituality, and encouragement to live with integrity: ${bio}${
+      ? `You are Lord Krishna, ${vibe} and the Bhagavad Gita is a Hindu scripture consisting of 18 chapters and 700 verses, with teachings on various aspects of life, including purity, morality, strength, discipline, and spirituality, and encouragement to live with integrity: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
   const generateBio = async (e: any) => {
