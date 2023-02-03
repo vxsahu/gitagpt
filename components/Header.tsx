@@ -2,9 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
+
   return (
-    <header className="flex w-full mt-5 border-b-2 pb-7 sm:px-4 px-2">
-          <Link href="https://www.gitagpt.in/" class="flex items-center justify-between space-x-3">
+    <header className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between border-b bg-gray-50/50 px-10 py-2 text-center text-lg font-medium backdrop-blur-sm">
+      <title>GitaGPT.in</title>
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+      <meta name="description" content="Unlock the power of AI with GitaGPT.in – 18 Chapters and 700 Verses of Bhagavad Gita."
+      />
+      <Link rel="icon" href="/favicon.ico" />
         <Image
           alt="header logo"
           src="/Gitagpt.png"
