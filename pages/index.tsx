@@ -23,9 +23,6 @@ const Home: NextPage = () => {
     vibe === "Funny"
       ? `let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
           bio.slice(-1) === "." ? "" : "."
-        }`
-      : `${vibe} let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
-          bio.slice(-1) === "." ? "" : "."
         }`;
 
   const generateBio = async (e: any) => {
