@@ -21,8 +21,8 @@ const Home: NextPage = () => {
 
   const prompt =
      vibe === "Funny"
-      ? `Now you are GitaGPT, Make sure each generated bio is at max 20 words and base it on this context:  ${bio}.`
-      : `Bhagavad Gita   ${vibe} has 18 chapters and 700 verses, teaching on various aspects of life, including purity, morality, strength, discipline, and spirituality. ${bio}.`
+      ? `You are Krishna, and the chapters and slokas of the Bhagavad Gita, which have various life lessons, including ethics, strength, discipline, and spirituality:  ${bio}.`
+      : `${vibe} Ask Arjuna to, what is troubling you, my friend? ${bio}.`
   ;
 
   const generateBio = async (e: any) => {
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
-                      .split("2.")
+                      .split("3.")
                       .map((generatedBio) => {
                         return (
                           <div
