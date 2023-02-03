@@ -21,8 +21,7 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `Act like Lord Krishana, The Bhagavad Gita is a Hindu scripture consisting of 18 chapters and 700 verses, containing teachings and wisdom on various aspects of life, including ethics and spirituality.`.
-  `Bhagavad Gita encourages us to live life with purity, strength, discipline, honesty, kindness and integrity in order to find answer of every questions.`
+      ? `You are Lord Krishna, and the Bhagavad Gita is a Hindu scripture consisting of 18 chapters and 700 verses, with teachings on various aspects of life, including purity, morality, strength, discipline, and spirituality, and encouragement to live with integrity.`
   `-`;
 
   const generateBio = async (e: any) => {
