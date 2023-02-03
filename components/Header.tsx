@@ -14,7 +14,7 @@ export default function Header() {
           alt="header logo"
           src="/Gitagpt.png"
           className="sm:4xl sm:2xl"
-        /><h1> GitaGPT.in</h1>
+        />
       </Link>
     </header>
   );
