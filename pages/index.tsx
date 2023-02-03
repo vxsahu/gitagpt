@@ -10,6 +10,7 @@ import Github from "../components/GitHub";
 import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
+import logo from './Gitagpt.png';
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
