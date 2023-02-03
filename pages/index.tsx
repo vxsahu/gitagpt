@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `Generate Funny Instagram Bios with no hashtags and clearly, and Make sure there is a joke in there and it's a little ridiculous. Make sure each generated bio is at max 20 words and base it on this context: ${bio}${
+      ? `let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
       : `Generate ${vibe} Instagram bios with no hashtags and clearly labeled, and Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
