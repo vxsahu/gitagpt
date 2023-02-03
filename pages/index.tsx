@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       ? `let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-      : `Generate ${vibe} Instagram bios with no hashtags and clearly labeled, and Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: ${bio}${
+      : `${vibe} let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
