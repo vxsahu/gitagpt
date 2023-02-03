@@ -7,7 +7,7 @@ export default function Header() {
       <Link href="https://www.gitagpt.in/" className="flex space-x-3">
         <Image
           alt="GitaGPT"
-          src="/Gitagpt.png"
+          src="/Gitagpt.svg"
           width={40}
           height={40}
         />
