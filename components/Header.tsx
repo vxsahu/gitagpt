@@ -10,9 +10,7 @@ export default function Header() {
           src="/Gitagpt.png"
           className="sm:4xl sm:2xl"
         />
-        <h1 className="sm:text-4xl text-2xl font-bold ml-2 tracking-tight">
-          GitaGPT.in
-        </h1>
+        <h1 className="sm:text-4xl text-2xl ml-2 tracking-tight">GitaGPT.in</h1>
       </Link>
     </header>
   );
