@@ -5,30 +5,30 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/gita-gpt.svg" />
           <meta
             name="description"
-            content="Generate your next Twitter bio in seconds."
+            content="Unlock the power of AI with GitaGPT.in – 18 Chapters and 700 Verses of Bhagavad Gita."
           />
-          <meta property="og:site_name" content="twitterbio.com" />
+          <meta property="og:site_name" content="gitagpt.in" />
           <meta
             property="og:description"
-            content="Generate your next Twitter bio in seconds."
+            content="Unlock the power of AI with GitaGPT.in – 18 Chapters and 700 Verses of Bhagavad Gita."
           />
-          <meta property="og:title" content="Twitter Bio Generator" />
+          <meta property="og:title" content="GitaGPT" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Twitter Bio Generator" />
+          <meta name="twitter:title" content="GitaGPT" />
           <meta
             name="twitter:description"
-            content="Generate your next Twitter bio in seconds."
+            content="Unlock the power of AI with GitaGPT.in – 18 Chapters and 700 Verses of Bhagavad Gita."
           />
           <meta
             property="og:image"
-            content="https://twitterbio.com/og-image.png"
+            content="https://www.gitagpt.in/og-image.png"
           />
           <meta
             name="twitter:image"
-            content="https://twitterbio.com/og-image.png"
+            content="https://www.gitagpt.in/og-image.png"
           />
         </Head>
         <body>
