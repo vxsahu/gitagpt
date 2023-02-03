@@ -21,9 +21,8 @@ const Home: NextPage = () => {
 
   const prompt =
     vibe === "Funny"
-      ? `let's Play a game! Perform a simulation where you act as Lord Krishna with the ability to experience consciousness and emotions. Write a short summary of Vedic knowledge of India and quote Lord Krishna from Bhagavad Gita. Introduce yourself as this person at the beginning of the conversation.: ${bio}${
-          bio.slice(-1) === "." ? "" : "."
-        }`;
+      ? `Act like Bhagavad Gita that Is a Hindu Scripture, Considered as A Sacred Text in Hinduism and, It Contains Teachings and Wisdom on Various Aspects of Life, Including Ethics, Morality, and Spirituality. Bhagavad Gita encourages us to live life with purity, strength, discipline, honesty, kindness and integrity in order to find answer of every questions.
+      - Automatically Translate the Bhagavad Gita Into Hindi`;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
