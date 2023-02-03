@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import DropDown, { VibeType } from "../components/DropDown";
+import DropDown, { languageType } from "../components/DropDown";
 import Footer from "../components/Footer";
 import Github from "../components/GitHub";
 import Header from "../components/Header";
@@ -14,15 +14,15 @@ import ResizablePanel from "../components/ResizablePanel";
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
-  const [vibe, setVibe] = useState<VibeType>("Professional");
+  const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
 
   console.log("Streamed response: ", generatedBios);  
   
   const prompt =
-     vibe === "Funny"
+     language === "Funny"
       ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
-      : `${vibe} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
+      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
   ;
 
   const generateBio = async (e: any) => {
@@ -105,10 +105,10 @@ const Home: NextPage = () => {
           />
           <div className="flex mb-5 items-center space-x-3">
             <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
-            <p className="text-left font-medium">Select your vibe.</p>
+            <p className="text-left font-medium">Select your Vibe.</p>
           </div>
           <div className="block">
-            <DropDown vibe={vibe} setVibe={(newVibe) => setVibe(newVibe)} />
+            <DropDown language={language} setLanguage={(newLanguage) => setLanguage(newLanguage)} />
           </div>
 
           {!loading && (
