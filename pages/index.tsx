@@ -171,8 +171,14 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way. Unlock the power of the Bhagavad Gita today with Gita GPT!</p>
-      </main>
+        <div class="whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
+    <figure class="flex flex-col-reverse">
+        <blockquote class="mt-6 space-y-4 leading-7 text-slate-700">
+            <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
+        </blockquote>
+            </figcaption>
+    </figure>
+</div>      </main>
       <Footer />
     </div>
   );
