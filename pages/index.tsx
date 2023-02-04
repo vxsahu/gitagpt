@@ -80,20 +80,8 @@ const Home: NextPage = () => {
         </h2>
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
-            <Image
-              src="/1-black.png"
-              width={30}
-              height={30}
-              alt="1 icon"
-              className="mb-5 sm:mb-0"
-            />
             <p className="text-left font-medium">
-              What troubles you,{" "}
-              <span className="text-slate-500">
-                 my child?
-              </span>
-              .
-            </p>
+              What troubles you, my child?</p>
           </div>
           <textarea
             value={bio}
@@ -104,20 +92,13 @@ const Home: NextPage = () => {
               "Ask to Krishna"
             }
           />
-          <div className="flex mb-5 items-center space-x-3">
-            <Image src="/2-black.png" width={30} height={30} alt="1 icon" />
-            <p className="text-left font-medium">Select your Vibe.</p>
-          </div>
-          <div className="block">
-            <DropDown language={language} setLanguage={(newLanguage) => setLanguage(newLanguage)} />
-          </div>
 
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateBio(e)}
             >
-              Ask to GPT GPT &rarr;
+              Ask to GitaGPT &rarr;
             </button>
           )}
           {loading && (
