@@ -171,7 +171,7 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <div className="whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
+        <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
         <blockquote className="mt-6 space-y-4 leading-7 text-slate-700">
             <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
         </blockquote>
