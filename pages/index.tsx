@@ -69,7 +69,7 @@ const Home: NextPage = () => {
     
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>GitaGPT</title>
+        <title>Gita GPT</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -171,9 +171,9 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <div class="whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-    <figure class="flex flex-col-reverse">
-        <blockquote class="mt-6 space-y-4 leading-7 text-slate-700">
+        <div classname="whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
+    <figure classname="flex flex-col-reverse">
+        <blockquote classname="mt-6 space-y-4 leading-7 text-slate-700">
             <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
         </blockquote>
             </figcaption>
