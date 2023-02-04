@@ -11,7 +11,7 @@ export default function Header() {
           width={45}
           height={45}
         />
-        <h1 className="class="justify-items-center my-5 font-bold text-xl">GitaGPT</h1>
+        <h1 className="justify-items-center my-5 font-bold text-xl">GitaGPT</h1>
       </Link>
     </header>
   );
