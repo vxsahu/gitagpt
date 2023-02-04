@@ -76,7 +76,7 @@ const Home: NextPage = () => {
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
         <h2 className="sm:text-4xl text-xl max-w-2xl font-bold text-slate-900">
-          Unlock the Power of the Bhagavad Gita with Gita GPT
+          Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateBio(e)}
             >
-              Ask Krishana &rarr;
+              Ask to GPT GPT &rarr;
             </button>
           )}
           {loading && (
@@ -172,13 +172,11 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div classname="whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-    <figure classname="flex flex-col-reverse">
         <blockquote classname="mt-6 space-y-4 leading-7 text-slate-700">
             <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
         </blockquote>
-            </figcaption>
-    </figure>
-</div>      </main>
+        </div>
+      </main>
       <Footer />
     </div>
   );
