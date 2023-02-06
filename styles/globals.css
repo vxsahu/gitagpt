@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+main.innerbox {
+  background: #f5f5f7;}
