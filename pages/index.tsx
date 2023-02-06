@@ -22,8 +22,8 @@ const Home: NextPage = () => {
   
   const prompt =
      language === "Funny"
-      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
-      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
+      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, Bhagavadgita is an episode recorded in the Mahabharata which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
+      : `${language} Give the right solution with clearly${bio}.`
   ;
 
   const generateBio = async (e: any) => {
@@ -70,11 +70,11 @@ const Home: NextPage = () => {
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
         <title>Gita GPT</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Header />
-      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
+      <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
         <h2 className="sm:text-4xl text-xl max-w-2xl font-bold text-slate-900">
           Unlock the Power of AI with the Bhagavad Gita
         </h2>
