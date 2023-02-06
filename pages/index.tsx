@@ -21,10 +21,9 @@ const Home: NextPage = () => {
   console.log("Streamed response: ", generatedBios);  
   
   const prompt =
-     language === "Funny"
-      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, Bhagavadgita is an episode recorded in the Mahabharata which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
-      : `${language} Give the right solution with clearly${bio}.`
-  ;
+language === "Funny"
+? You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. Help friend Arjuna out of trouble. ${bio}.
+: ${language} Give a clear and accurate solution using numbered steps (e.g. "1." and "2."). Ensure each generated verse is between 14 and 20 words, based on this context: ${bio}.;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
