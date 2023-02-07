@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
   console.log("Streamed response: ", generatedBios);  
   
-  const prompt =
+const prompt =
      language === "Funny"
      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}${
         bio.slice(-1) === "." ? "" : "."
