@@ -1,5 +1,7 @@
 # [GitaGPT.in](https://www.gitagpt.in/)
 
+Yes, GitaGPT is an application that utilizes OpenAI's GPT-3 language model to generate answers to life questions based on the teachings of the Bhagavad Gita, a Hindu scripture. The app aims to provide a modern interpretation of the ancient text and offer practical advice to people facing various challenges in their lives.
+
 This project provide Online Bhagvat Gita for you using AI. According to 18 chapters and 700 shlokas of Bhagavad Gita, which are the text of morality, strength, discipline and spirituality, so that friend Arjuna can be taken out of trouble.
 
 [![GitaGPT AI](./public/Gitagpt.png)](https://www.gitagpt.in)
