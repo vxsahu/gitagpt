@@ -73,12 +73,12 @@ const Home: NextPage = () => {
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
       <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <h2 className="sm:text-4xl text-xl max-w-2xl font-bold text-slate-900">
+        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
           Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-w-xl w-full">
@@ -156,23 +156,23 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-<h2 className="mt-6 space-y-4 leading-7 text-slate-700 sm:text-2xl">Get answers to your questions with Bhagavad Gita: </h2>
-<ul className="list-disc">
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Old        - can seek wisdom on how to know how to die.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Ignorant   - can find enlightenment and become wise.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Learned    - can cultivate humility.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Rich       - can learn compassion.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Dreamer    - can find enchantment.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Practical  - can gain counsel.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Weak       - can find strength.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Strength   - can receive direction.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Humble     - can find exaltation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Weary      - can find rest.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Troubled   - can find peace.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Doubting   - can receive assurance.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Sinner     - can find salvation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Seeker     - can achieve Moksha.</li>
+<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-2xl">Get answers to your questions with Bhagavad Gita: </h2>
+<ul className="list-disc text-left text-gray-900">
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Old        - can seek wisdom on how to know how to die.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Ignorant   - can find enlightenment and become wise.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Learned    - can cultivate humility.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Rich       - can learn compassion.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Dreamer    - can find enchantment.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Practical  - can gain counsel.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weak       - can find strength.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Strength   - can receive direction.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Humble     - can find exaltation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weary      - can find rest.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Troubled   - can find peace.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Doubting   - can receive assurance.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Sinner     - can find salvation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Seeker     - can achieve Moksha.</li>
             <li>The Human      - can find guidance.</li></ul>        </div>
       </main>
       <Footer />
