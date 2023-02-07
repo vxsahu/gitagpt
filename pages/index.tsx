@@ -156,23 +156,23 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-        <h2 className="mt-6 space-y-4 leading-7 text-slate-700">Get answers to your questions with Bhagavad Gita: </h2>
-          <ul>
-            <li>The Young      - can turn to GitaGPT for guidance on how to live life.</li>
-            <li>The Old        - can seek wisdom on how to know how to die.</li>
-<li>The Ignorant   - can find enlightenment and become wise.</li>
-<li>The Learned    - can cultivate humility.</li>
-<li>The Rich       - can learn compassion.</li>
-<li>The Dreamer    - can find enchantment.</li>
-<li>The Practical  - can gain counsel.</li>
-<li>The Weak       - can find strength.</li>
-<li>The Strength   - can receive direction.</li>
-<li>The Humble     - can find exaltation.</li>
-<li>The Weary      - can find rest.</li>
-<li>The Troubled   - can find peace.</li>
-<li>The Doubting   - can receive assurance.</li>
-<li>The Sinner     - can find salvation.</li>
-<li>The Seeker     - can achieve Moksha.</li>
+        <h2 className="mt-6 space-y-4 leading-7 text-slate-700 sm:text-2xl">Get answers to your questions with Bhagavad Gita: </h2>
+          <ul className="list-disc">
+            <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
+            <li class="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Old        - can seek wisdom on how to know how to die.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Ignorant   - can find enlightenment and become wise.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Learned    - can cultivate humility.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Rich       - can learn compassion.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Dreamer    - can find enchantment.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Practical  - can gain counsel.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Weak       - can find strength.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Strength   - can receive direction.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Humble     - can find exaltation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Weary      - can find rest.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Troubled   - can find peace.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Doubting   - can receive assurance.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Sinner     - can find salvation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Seeker     - can achieve Moksha.</li>
             <li>The Human      - can find guidance.</li></ul>        </div>
       </main>
       <Footer />
