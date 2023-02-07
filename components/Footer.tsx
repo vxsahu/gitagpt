@@ -13,7 +13,15 @@ export default function Footer() {
         >
           OpenAI{" "}
         </a>
-        and Made with Love.{" "} 
+        and{" "}
+        <a
+          href="https://vercel.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="font-bold hover:underline transition underline-offset-2"
+        >
+          Inspired by Bhagavad Gita
+        </a>
       </div>
       <div className="flex space-x-4 pb-4 sm:pb-0">
         <Link
