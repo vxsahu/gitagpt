@@ -119,6 +119,8 @@ const prompt =
           toastOptions={{ duration: 2000 }}
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
+        
+        
         <ResizablePanel>
           <AnimatePresence mode="wait">
             <motion.div className="space-y-10 my-10">
@@ -126,20 +128,20 @@ const prompt =
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      Bhagavad Geeta says:
+                      According to Bhagavad Geeta:
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
-                      .split("3.")
+                      .split("2.")
                       .map((generatedBio) => {
                         return (
                           <div
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
                               navigator.clipboard.writeText(generatedBio);
-                              toast("Copy to Clipboard", {
+                              toast("copied to clipboard", {
                                 icon: "✂️",
                               });
                             }}
