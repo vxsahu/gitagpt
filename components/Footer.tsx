@@ -22,9 +22,14 @@ export default function Footer() {
         >
           Vercel Edge Functions.
         </a>
-        <a herf="https://www.sahu4you.com/'>
-                 Sahu4You
-                 </a>
+        <a
+          href="https://www.sahu4you.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="font-bold hover:underline transition underline-offset-2"
+          >
+          Sahu4You
+           </a>
       </div>
       <div className="flex space-x-4 pb-4 sm:pb-0">
         <Link
