@@ -25,7 +25,7 @@ const Home: NextPage = () => {
      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}${
         bio.slice(-1) === "." ? "" : "."
       }`
-    : `${language} Give a clear and accurate solution using numbered steps (e.g. "1." and "2."). Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}${
+    : `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}${
         bio.slice(-1) === "." ? "" : "."
       }`;
 
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
     
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Gita GPT</title>
+        <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
 
