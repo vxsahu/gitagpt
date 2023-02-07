@@ -126,7 +126,7 @@ const Home: NextPage = () => {
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      Bhagavad Gita says:
+                      Bhagavad Geeta says:
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -157,7 +157,7 @@ const Home: NextPage = () => {
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
         <blockquote className="mt-6 space-y-4 leading-7 text-slate-700">
-            <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Gita that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
+            <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Geeta that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
         </blockquote>
         </div>
       </main>
