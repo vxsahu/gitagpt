@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/gita-gpt.svg" />
-          <title>Gita GPT</title>
+          <title>Gita GPT – Bhagavad Gita as Chatbot</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Unlock the power of AI with Gita GPT – 18 Chapters and 700 Verses of Bhagavad Gita." />
             <meta property="og:title" content="Gita GPT" />
