@@ -28,7 +28,7 @@ export default function Footer() {
           rel="noreferrer"
           className="font-bold hover:underline transition underline-offset-2"
           >
-          Sahu4You
+           Sahu4You
            </a>
       </div>
       <div className="flex space-x-4 pb-4 sm:pb-0">
