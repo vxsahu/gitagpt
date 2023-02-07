@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="description" content="Unlock the power of AI with Gita GPT – 18 Chapters and 700 Verses of Bhagavad Gita." />
             <meta property="og:title" content="Gita GPT" />
-          <link rel="canonical" href="https://www.gitagpt.in">
+          <link rel="canonical" href="https://www.gitagpt.in" />
   <meta name="twitter:site" content="%s" />
               <meta property="og:description" content="Unlock the power of AI with Gita GPT – 18 Chapters and 700 Verses of Bhagavad Gita." />
                 <meta property="og:url" content="https://www.gitagpt.in/" />
