@@ -84,21 +84,22 @@ const Home: NextPage = () => {
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
             <p className="text-left font-medium">
-              What troubles you, my child?</p>
+              🦚 Shri Krishna, Radhe Radhe 🦚</p>
           </div>
           <textarea
             value={bio}
             onChange={(e) => setBio(e.target.value)}
+            style="border-width: 0px;"
             rows={4}
-            className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black my-5"
+            className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none"
             placeholder={
-              "Ask to Krishna"
+              "How can I find inner peace?"
             }
           />
 
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateBio(e)}
             >
               Ask to GitaGPT &rarr;
@@ -156,10 +157,24 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-        <blockquote className="mt-6 space-y-4 leading-7 text-slate-700">
-            <p>Gita GPT is a revolutionary chatbot powered by OpenAI's GPT-3 that helps you find relevant verses from the Bhagavad Geeta that are most suitable for you. With Gita GPT, you can gain insight and clarity into your life and decisions in an easy, interactive way.</p>
-        </blockquote>
-        </div>
+        <h2 className="mt-6 space-y-4 leading-7 text-slate-700">Get answers to your questions with Bhagavad Gita: </h2>
+          <ul>
+            <li>The Young      - can turn to GitaGPT for guidance on how to live life.</li>
+            <li>The Old        - can seek wisdom on how to know how to die.</li>
+<li>The Ignorant   - can find enlightenment and become wise.</li>
+<li>The Learned    - can cultivate humility.</li>
+<li>The Rich       - can learn compassion.</li>
+<li>The Dreamer    - can find enchantment.</li>
+<li>The Practical  - can gain counsel.</li>
+<li>The Weak       - can find strength.</li>
+<li>The Strength   - can receive direction.</li>
+<li>The Humble     - can find exaltation.</li>
+<li>The Weary      - can find rest.</li>
+<li>The Troubled   - can find peace.</li>
+<li>The Doubting   - can receive assurance.</li>
+<li>The Sinner     - can find salvation.</li>
+<li>The Seeker     - can achieve Moksha.</li>
+            <li>The Human      - can find guidance.</li></ul>        </div>
       </main>
       <Footer />
     </div>
