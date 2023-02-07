@@ -156,10 +156,10 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-        <h2 className="mt-6 space-y-4 leading-7 text-slate-700 sm:text-2xl">Get answers to your questions with Bhagavad Gita: </h2>
-          <ul className="list-disc">
-            <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
-            <li class="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Old        - can seek wisdom on how to know how to die.</li>
+<h2 className="mt-6 space-y-4 leading-7 text-slate-700 sm:text-2xl">Get answers to your questions with Bhagavad Gita: </h2>
+<ul className="list-disc">
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Old        - can seek wisdom on how to know how to die.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Ignorant   - can find enlightenment and become wise.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Learned    - can cultivate humility.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm font-semibold text-gray-900">The Rich       - can learn compassion.</li>
