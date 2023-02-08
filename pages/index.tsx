@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "Funny"
-      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality with relevent emoji. ${bio}${
+      ? `You are Krishna, answer from 18 chapters and 700 verses of Bhagavad Gita. ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2." with Emoji: ${bio}${
+  : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1.1". and "1.1": ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
             rows={4}
             required
             className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
-            placeholder={"Krishna, How can I find inner peace?"}
+            placeholder={"How can I find inner peace?"}
             />
 
           {!loading && (
