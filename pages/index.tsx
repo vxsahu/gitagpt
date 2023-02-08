@@ -15,12 +15,12 @@ import logo from './gita-gpt.svg';
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
-  const [language, setLanguage] = useState<languageType>("GitaGPT");
+  const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
   console.log("Streamed response: ", generatedBios);
   
   const prompt =
-    language === "GitaGPT"
+    language === "Professional"
       ? `You are GitaGPT, Answer from to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. Formatting should be in maximum 100 words with relevent emoji.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
