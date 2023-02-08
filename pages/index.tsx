@@ -17,16 +17,10 @@ const Home: NextPage = () => {
   const [bio, setBio] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
-  console.log("Streamed response: ", generatedBios);  
-  
-const prompt =
-     language === "Funny"
-     ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}${
-        bio.slice(-1) === "." ? "" : "."
-      }`
-    : `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}${
-        bio.slice(-1) === "." ? "" : "."
-      }`;
+  console.log("Streamed response: ", generatedBios);
+  const prompt = language === "Funny" ? 
+        `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}$ { bio.slice(-1) === "." ? "" : "." }`
+  :     `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}$ { bio.slice(-1) === "." ? "" : "." }`;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
@@ -90,16 +84,13 @@ const prompt =
             onChange={(e) => setBio(e.target.value)}
             rows={4}
             className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
-            placeholder={
-              "How can I find inner peace?"
-            }
+            placeholder={"How can I find inner peace?"}
             />
 
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
-              onClick={(e) => generateBio(e)}
-            >
+              >
               Ask to GitaGPT &rarr;
             </button>
           )}
@@ -132,7 +123,7 @@ const prompt =
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
-                      .split("2.")
+                      .split("3.")
                       .map((generatedBio) => {
                         return (
                           <div
