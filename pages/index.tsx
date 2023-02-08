@@ -97,8 +97,7 @@ const Home: NextPage = () => {
           {loading && (
             <button
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
-              disabled
-            >
+              >
               <LoadingDots color="white" style="large" />
             </button>
           )}
@@ -138,11 +137,11 @@ const Home: NextPage = () => {
                           >
                             <p>{generatedBio}</p>
                           </div>
-                          <p className="text-left font-medium">
-                          Every word based on holy Bhagavad Gita chapters.</p>
                         );
                       })}
                   </div>
+                  <p className="text-left font-medium">
+                          Every word based on holy Bhagavad Gita chapters.</p>
                 </>
               )}
             </motion.div>
