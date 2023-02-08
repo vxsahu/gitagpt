@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "Funny"
-      ? `You are Krishna, answer from 18 chapters and 700 verses of Bhagavad Gita. ${bio}${
+      ? `You are GitaGPT, Answer the Solution from Bhagavad Gita. ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1.1". and "1.1": ${bio}${
+  : `${language}Each answer must be in clear and formatted text in the Krishna style.:${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
