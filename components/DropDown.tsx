@@ -10,7 +10,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export type languageType = "Professional" | "Casual" | "Funny";
+export type languageType = "GitaGPT" | "Casual" | "Funny";
 
 interface DropDownProps {
   language: languageType;
