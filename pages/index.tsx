@@ -138,6 +138,8 @@ const Home: NextPage = () => {
                           >
                             <p>{generatedBio}</p>
                           </div>
+                          <p className="text-left font-medium">
+                          Every word based on holy Bhagavad Gita chapters.</p>
                         );
                       })}
                   </div>
