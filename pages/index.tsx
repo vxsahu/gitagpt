@@ -115,9 +115,7 @@ const Home: NextPage = () => {
           reverseOrder={false}
           toastOptions={{ duration: 2000 }}
         />
-        <p class="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please Donate to support this project&nbsp;sahu4you@ybl
-
-</p>
+        <p className="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please Donate to support this project&nbsp;sahu4you@ybl</p>
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         
         <ResizablePanel>
@@ -131,8 +129,7 @@ const Home: NextPage = () => {
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                    {generatedBios
-                      .substring(generatedBios.indexOf("1") + 3)
+                    {generatedBios && generatedBios.substring(generatedBios.indexOf("1") + 3)
                       .split("2.")
                       .map((generatedBio) => {
                         return (
@@ -150,9 +147,9 @@ const Home: NextPage = () => {
                           </div>
                         );
                       })}
+
+{!generatedBios && <div>Please Donate to support this project sahu4you@ybl</div>}
                   </div>
-                  <p className="text-left font-medium">
-                          Every word based on holy Bhagavad Gita chapters.</p>
                 </>
               )}
             </motion.div>
