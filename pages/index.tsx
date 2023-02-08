@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "Funny"
-      ? `You are GitaGPT, Answer from to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. Formatting should be in maximum 100 words with relevent emoji.${bio}${
+      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality with relevent emoji.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-        : `${language}.And Tell about GitaGPT in 20 words, Share with your true, tell how it is right for you. ${bio}${
+        : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2.".${bio}${
         bio.slice(-1) === "." ? "" : "."
       }`;
 
