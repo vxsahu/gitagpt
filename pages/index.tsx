@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "Funny"
-      ? `You are GitaGPT, Answer the Solution from Bhagavad Gita. ${bio}${
+      ? `Act like bhagavad gita and answer to arjuna.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language}Each answer must be in clear and formatted text in the Krishna style.:${bio}${
+  : `${language}Answer in the style of the Bhagavad Gita with label relevent verse.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
