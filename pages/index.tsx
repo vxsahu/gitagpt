@@ -21,10 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "Funny"
-      ? `Act like bhagavad gita and answer to arjuna.${bio}${
+      ? ` Act like bhagavad gita and find solution to answer arjuna. ${bio} ${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language} Relevent verse in the style of the Bhagavad Gita with label "1."${bio}${
+  : `${language} Generate relevent verse in the style of the Bhagavad Gita: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
