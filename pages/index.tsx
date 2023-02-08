@@ -18,9 +18,13 @@ const Home: NextPage = () => {
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
   console.log("Streamed response: ", generatedBios);
-  const prompt = language === "Funny" ? 
-        `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}$ { bio.slice(-1) === "." ? "" : "." }`
-  :     `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}$ { bio.slice(-1) === "." ? "" : "." }`;
+  
+  const prompt =
+    language === "GitaGPT"
+      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. "1." and "2.". Make sure that Bhagavad Gita has 18 chapters and 700 verses. be in maximum of 20 words and base it on the context: ${bio}${
+          ${bio}${
+          bio.slice(-1) === "." ? "" : "."
+        }`;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
