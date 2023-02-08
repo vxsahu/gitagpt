@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       ? `You are GitaGPT, Answer from to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. Formatting should be in maximum 100 words with relevent emoji.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-        : `${language}.You are GitaGPT Marketing Head, And Tell about GitaGPT, Share with your true, tell how it is right for you. ${bio}${
+        : `${language}.And Tell about GitaGPT in 20 words, Share with your true, tell how it is right for you. ${bio}${
         bio.slice(-1) === "." ? "" : "."
       }`;
 
