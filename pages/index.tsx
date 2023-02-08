@@ -21,11 +21,10 @@ const Home: NextPage = () => {
   
   const prompt =
     language === "GitaGPT"
-      ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. "1." and "2.". Make sure that Bhagavad Gita has 18 chapters and 700 verses. be in maximum of 20 words and base it on the context: ${bio}${
-          ${bio}${
+      ? `You are GitaGPT, Answer from to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. Formatting should be in maximum 100 words with relevent emoji.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-        : `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}${
+        : `${language}.You are GitaGPT Marketing Head, And Tell about GitaGPT, Share with your true, tell how it is right for you. ${bio}${
         bio.slice(-1) === "." ? "" : "."
       }`;
 
