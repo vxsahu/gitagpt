@@ -77,12 +77,12 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <h2 className="mt-10 text-center text-lg font-light dark:text-white/80 font-medium">
+        <h2 className="mt-10 text-center text-lg font-light font-medium">
           Dive Deep into the Knowledge of Shri Krishna
         </h2>
         <div className="max-w-xl w-full">
-          <div className="flex mt-10 items-center space-x-3">
-            <p className="justify-center text-left font-medium">
+          <div className="justify-center flex mt-10 items-center space-x-3">
+            <p className="text-left font-medium">
               🦚 Shri Krishna, Radhe Radhe 🦚</p>
           </div>
           <textarea
