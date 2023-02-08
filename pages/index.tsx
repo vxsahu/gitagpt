@@ -17,7 +17,6 @@ const Home: NextPage = () => {
   const [bio, setBio] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedBios, setGeneratedBios] = useState<String>("");
-
   console.log("Streamed response: ", generatedBios);  
   
 const prompt =
@@ -119,7 +118,6 @@ const prompt =
           toastOptions={{ duration: 2000 }}
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
-        
         
         <ResizablePanel>
           <AnimatePresence mode="wait">
