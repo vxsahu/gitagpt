@@ -23,10 +23,11 @@ const Home: NextPage = () => {
     language === "Funny"
       ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality with relevent emoji.${bio}${
           bio.slice(-1) === "." ? "" : "."
-        }`
-        : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2.".${bio}${
-        bio.slice(-1) === "." ? "" : "."
-      }`;
+        }`;
+        : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2."
+        : ${bio}${
+          bio.slice(-1) === "." ? "" : "."
+        }`;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
@@ -130,7 +131,7 @@ const Home: NextPage = () => {
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                     {generatedBios
                       .substring(generatedBios.indexOf("1") + 3)
-                      .split("3.")
+                      .split("2.")
                       .map((generatedBio) => {
                         return (
                           <div
