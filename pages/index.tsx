@@ -15,12 +15,12 @@ import logo from './gita-gpt.svg';
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
-  const [language, setLanguage] = useState<languageType>("Professional");
+  const [language, setLanguage] = useState<languageType>("GitaGPT");
   const [generatedBios, setGeneratedBios] = useState<String>("");
   console.log("Streamed response: ", generatedBios);
   
   const prompt =
-    language === "Funny"
+    language === "GitaGPT"
       ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. "1." and "2.". Make sure that Bhagavad Gita has 18 chapters and 700 verses. be in maximum of 20 words and base it on the context: ${bio}${
           ${bio}${
           bio.slice(-1) === "." ? "" : "."
