@@ -77,12 +77,12 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
-          Unlock the Power of AI with the Bhagavad Gita
+        <h2 className="mt-10 text-center text-lg font-light dark:text-white/80 font-medium">
+          Dive Deep into the Knowledge of Shri Krishna
         </h2>
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
-            <p className="text-left font-medium">
+            <p className="justify-center text-left font-medium">
               🦚 Shri Krishna, Radhe Radhe 🦚</p>
           </div>
           <textarea
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
               {generatedBios && (
                 <>
                   <div>
-                    <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
+                    <h2 className="sm:text-4xl text-xl font-bold text-slate-900 mx-auto">
                       According to Bhagavad Geeta:
                     </h2>
                   </div>
