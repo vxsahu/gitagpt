@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       ? `Act like bhagavad gita and answer to arjuna.${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language}Answer in the style of the Bhagavad Gita with label relevent verse.${bio}${
+  : `${language} Relevent verse in the style of the Bhagavad Gita with label "1."${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
