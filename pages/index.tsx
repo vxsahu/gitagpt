@@ -115,6 +115,9 @@ const Home: NextPage = () => {
           reverseOrder={false}
           toastOptions={{ duration: 2000 }}
         />
+        <p class="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please Donate to support this project&nbsp;sahu4you@ybl
+
+</p>
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         
         <ResizablePanel>
