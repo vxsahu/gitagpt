@@ -89,8 +89,9 @@ const Home: NextPage = () => {
             value={bio}
             onChange={(e) => setBio(e.target.value)}
             rows={4}
+            required
             className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
-            placeholder={"How can I find inner peace?"}
+            placeholder={"Krishna, How can I find inner peace?"}
             />
 
           {!loading && (
@@ -98,7 +99,7 @@ const Home: NextPage = () => {
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateBio(e)}
             >
-              Ask to GitaGPT &rarr;
+              Ask Krishna &rarr;
             </button>
           )}
           {loading && (
@@ -129,26 +130,31 @@ const Home: NextPage = () => {
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                    {generatedBios && generatedBios.substring(generatedBios.indexOf("1") + 3)
-                      .split("2.")
-                      .map((generatedBio) => {
-                        return (
-                          <div
-                            className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                            onClick={() => {
-                              navigator.clipboard.writeText(generatedBio);
-                              toast("copied to clipboard", {
-                                icon: "✂️",
-                              });
-                            }}
-                            key={generatedBio}
-                          >
-                            <p>{generatedBio}</p>
-                          </div>
-                        );
-                      })}
+                    if (!generatedBio) {
+  return <div>Please Donate to support this project sahu4you@ybl</div>;
+}
 
-{!generatedBios && <div>Please Donate to support this project sahu4you@ybl</div>}
+return (
+  generatedBios
+    .substring(generatedBios.indexOf("1") + 3)
+    .split("2.")
+    .map((generatedBio) => {
+      return (
+        <div
+          className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+          onClick={() => {
+            navigator.clipboard.writeText(generatedBio);
+            toast("copied to clipboard", {
+              icon: "✂️",
+            });
+          }}
+          key={generatedBio}
+        >
+          <p>{generatedBio}</p>
+        </div>
+      );
+    })
+);
                   </div>
                 </>
               )}
@@ -156,24 +162,24 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenge: </h2>
+<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita 📓 holds the key to answers to every questions </h2>
 <ul className="list-disc text-left text-gray-900 my-5">
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Old        - can seek wisdom on how to know how to die.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Ignorant   - can find enlightenment and become wise.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Learned    - can cultivate humility.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Rich       - can learn compassion.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Dreamer    - can find enchantment.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Practical  - can gain counsel.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weak       - can find strength.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Strength   - can receive direction.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Humble     - can find exaltation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weary      - can find rest.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Troubled   - can find peace.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Doubting   - can receive assurance.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Sinner     - can find salvation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Seeker     - can achieve Moksha.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Human      - can find guidance.</li></ul>        </div>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Young 😇 can turn to GitaGPT for guidance on how to live life.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Old 👵 can seek wisdom on how to know how to die.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Ignorant 👏🏻 can find enlightenment and become wise.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Learned 🎼 can cultivate humility.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Rich 💰 can learn compassion.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Dreamer 🕺🏻 can find enchantment.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Practical 👩🏻‍⚕️ can gain counsel.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weak 👁️ can find strength.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Strength 💪🏻 can receive direction.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Humble 😇 can find exaltation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weary 🫦 can find rest.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Troubled 🪬 can find peace.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Doubting 👩🏻‍⚕️ can receive assurance.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Sinner 👺 can find salvation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Seeker 🚴🏻‍♂️ can achieve Moksha.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Human 🚶🏻 can find guidance.</li></ul>        </div>
       </main>
       <Footer />
     </div>
