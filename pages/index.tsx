@@ -116,7 +116,7 @@ const Home: NextPage = () => {
           reverseOrder={false}
           toastOptions={{ duration: 2000 }}
         />
-        <p className="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please Share to support this project.</p>
+        <p className="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please share to show support for this project.</p>
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         
         <ResizablePanel>
@@ -156,8 +156,7 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-        <div id="music"><embed src="./krishna_flute.mp3" autostart=true loop=true /></div>
-<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita 📓 holds the key to answers to every questions </h2>
+          <h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita 📓 holds the key to answers to every questions </h2>
 <ul className="list-disc text-left text-gray-900 my-5">
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Young 😇 can turn to GitaGPT for guidance on how to live life.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Old 👵 can seek wisdom on how to know how to die.</li>
