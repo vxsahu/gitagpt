@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality with relevent emoji. ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`
-  : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2.": ${bio}${
+  : `${language}.The answer from Bhagavad Geeta and the chapter and verse labeled "1". and "2." with Emoji: ${bio}${
           bio.slice(-1) === "." ? "" : "."
         }`;
 
@@ -130,31 +130,25 @@ const Home: NextPage = () => {
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                    if (!generatedBio) {
-  return <div>Please Donate to support this project sahu4you@ybl</div>;
-}
-
-return (
-  generatedBios
-    .substring(generatedBios.indexOf("1") + 3)
-    .split("2.")
-    .map((generatedBio) => {
-      return (
-        <div
-          className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-          onClick={() => {
-            navigator.clipboard.writeText(generatedBio);
-            toast("copied to clipboard", {
-              icon: "✂️",
-            });
-          }}
-          key={generatedBio}
-        >
-          <p>{generatedBio}</p>
-        </div>
-      );
-    })
-);
+                    {generatedBios
+                      .substring(generatedBios.indexOf("1") + 3)
+                      .split("2.")
+                      .map((generatedBio) => {
+                        return (
+                          <div
+                            className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                            onClick={() => {
+                              navigator.clipboard.writeText(generatedBio);
+                              toast("copied to clipboard", {
+                                icon: "✂️",
+                              });
+                            }}
+                            key={generatedBio}
+                          >
+                            <p>{generatedBio}</p>
+                          </div>
+                        );
+                      })}
                   </div>
                 </>
               )}
