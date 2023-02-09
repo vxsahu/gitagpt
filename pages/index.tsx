@@ -89,7 +89,6 @@ const Home: NextPage = () => {
             value={bio}
             onChange={(e) => setBio(e.target.value)}
             rows={4}
-            required
             className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
             placeholder={"How can I find inner peace?"}
             />
