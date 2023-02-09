@@ -23,9 +23,7 @@ const Home: NextPage = () => {
   const prompt =
      language === "Funny"
       ? `Act as Lord Krishna and use the teachings of the Bhagavad Gita to help your friend Arjuna. ${Gita}.`
-      : `${language}
-      Arjuna: Krishna, I am in a great dilemma. I am unsure about what the right path for me is. Can you please guide me and help me find clarity?
-      Lord Krishna: ${Gita}.`
+      : `${language} Arjuna is in a great dilemma. I am unsure about what the right path for me is. Can you please guide me and help me find clarity?${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
@@ -77,12 +75,12 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-500">
+        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
           Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-w-xl w-full">
           <div className="mt-10 items-center space-x-3">
-            <p className="text-center font-medium text-slate-300">2.71,108+ Updesh generated</p>
+            <p className="text-center font-medium text-slate-700">2.71,108+ Updesh generated</p>
             <strong className="text-center font-medium">
               🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
@@ -101,7 +99,7 @@ const Home: NextPage = () => {
               className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               onClick={(e) => generateGita(e)}
             >
-              Ask to GitaGPT &rarr;
+              Ask GitaGPT &rarr;
             </button>
           )}
           {loading && (
@@ -152,19 +150,33 @@ const Home: NextPage = () => {
                         );
                       })}
                   </div>
-                  <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project 😇, to build it.</p></a>
                 </>
               )}
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
+        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? Share with ❤️.</p></a>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenge, learn how to Use GitaGPT:</h2>
-          <p>The process is described as simple and easy:</p>
+<h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">Go to the website (either gitagpt.in or sahu4you.com), type in your question on the screen, and then press the submit button.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">According to the statement, a relevant verse from the Bhagavad Gita will then be generated for you.</li>
-          </ul>        </div>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Young, can turn guidance on how to live life.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Old, can seek wisdom on how to know how to die.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Ignorant, can find enlightenment and become wise.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Learned, can cultivate humility.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Rich, can learn compassion.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Dreamer, can find enchantment.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Practical, can gain counsel.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weak, can find strength.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Strength, can receive direction.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Humble, can find exaltation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weary, can find rest.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Troubled, can find peace.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Doubting, can receive assurance.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Sinner, can find salvation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Seeker, can achieve Moksha.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Human, can find guidance.</li></ul>
+          </ul>
+        </div>
       </main>
       <Footer />
     </div>
