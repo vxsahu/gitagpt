@@ -22,8 +22,8 @@ const Home: NextPage = () => {
   
   const prompt =
      language === "Funny"
-      ? `Act as Lord Krishna and use the teachings of the Bhagavad Gita to help your friend Arjuna. ${Gita}.`
-      : `${language} Generate 2 verse from bhagavad gita with contect: ${Gita}.`
+      ? `Act as Lord Krishna, use the teachings of the Bhagavad Gita. ${Gita}.`
+      : `${language} Give a clear solution. Ensure each generated verse is between 150 and 200 words.${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
