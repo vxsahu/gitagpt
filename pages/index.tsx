@@ -3,14 +3,15 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
-import DropDown, { languageType } from "../components/DropDown";
+import { toast, Toaster } from "react-hot-toast";
+import DropDown from "../components/DropDown";
 import Footer from "../components/Footer";
 import Github from "../components/GitHub";
 import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
+import { type languageType } from "../utils/prompt";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);

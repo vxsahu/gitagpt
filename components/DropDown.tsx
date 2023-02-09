@@ -5,19 +5,16 @@ import {
   ChevronUpIcon,
 } from "@heroicons/react/20/solid";
 import { Fragment } from "react";
+import { languages, type languageType } from "../utils/prompt";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export type languageType = "Professional" | "Casual" | "Funny";
-
 interface DropDownProps {
   language: languageType;
   setLanguage: (language: languageType) => void;
 }
-
-let languages: languageType[] = ["Professional", "Casual", "Funny"];
 
 export default function DropDown({ language, setLanguage }: DropDownProps) {
   return (
