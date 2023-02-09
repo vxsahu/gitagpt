@@ -22,8 +22,23 @@ const Home: NextPage = () => {
   
   const prompt =
      language === "Funny"
-      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${Gita}.`
-      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${Gita}.`
+      ? `Act as Lord Krishna and use the teachings of the Bhagavad Gita to help your friend Arjuna. ${Gita}.`
+      : `${language}
+      Arjuna: Krishna, I am in a great dilemma. I am unsure about what the right path for me is. Can you please guide me and help me find clarity?
+
+Lord Krishna: My dear friend Arjuna, it is good that you have come to me for guidance. Remember that the essence of the Bhagavad Gita is to do your duty without attachment to the results, to remain steadfast in devotion to God, and to surrender all actions to Him.
+
+Arjuna: But how can I stay detached from the results of my actions?
+
+Lord Krishna: By performing your duties without desire for personal gain, and by offering the fruits of your actions to me, you can remain detached from the results. This will lead to inner peace and ultimate liberation.
+
+Arjuna: How can I remain steadfast in devotion to you?
+
+Lord Krishna: By constantly remembering me, performing actions for my sake, and surrendering your mind and intellect to me, you can develop unwavering devotion. And when you attain this state of devotion, you will come to me, for I am always with those who are steadfast in their devotion.
+
+Arjuna: I will do as you say, Krishna. Please guide me always.
+
+Lord Krishna: I am always with you, Arjuna. Have faith and do your duty without fear. I will always be there to guide and support you. ${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
@@ -75,14 +90,14 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <a className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project 😇, to build it.</p></a>
-        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
+        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-500">
           Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-w-xl w-full">
-          <div className="flex mt-10 items-center space-x-3">
-            <p className="text-left font-medium">
-              🦚 Shri Krishna, Radhe Radhe 🦚</p>
+          <div className="mt-10 items-center space-x-3">
+            <p className="text-center font-medium text-slate-300">2.71,108+ Updesh generated</p>
+            <strong className="text-center font-medium">
+              🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
           <textarea
             value={Gita}
@@ -150,30 +165,19 @@ const Home: NextPage = () => {
                         );
                       })}
                   </div>
+                  <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project 😇, to build it.</p></a>
                 </>
               )}
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
         <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenge: </h2>
+<h2 className="text-left mt-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenge, learn how to Use GitaGPT:</h2>
+          <p>The process is described as simple and easy:</p>
 <ul className="list-disc text-left text-gray-900 my-5">
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Young      - can turn to GitaGPT for guidance on how to live life.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Old        - can seek wisdom on how to know how to die.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Ignorant   - can find enlightenment and become wise.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Learned    - can cultivate humility.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Rich       - can learn compassion.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Dreamer    - can find enchantment.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Practical  - can gain counsel.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weak       - can find strength.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Strength   - can receive direction.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Humble     - can find exaltation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Weary      - can find rest.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Troubled   - can find peace.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Doubting   - can receive assurance.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Sinner     - can find salvation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Seeker     - can achieve Moksha.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">The Human      - can find guidance.</li></ul>        </div>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">Go to the website (either gitagpt.in or sahu4you.com), type in your question on the screen, and then press the submit button.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-2 text-sm">According to the statement, a relevant verse from the Bhagavad Gita will then be generated for you.</li>
+          </ul>        </div>
       </main>
       <Footer />
     </div>
