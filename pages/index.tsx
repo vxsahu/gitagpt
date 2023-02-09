@@ -22,8 +22,12 @@ const Home: NextPage = () => {
   
   const prompt =
      language === "Funny"
-      ? `Act as Lord Krishna, use the teachings of the Bhagavad Gita. ${Gita}.`
-      : `${language} Give a clear solution. Ensure each generated verse is between 150 and 200 words.${Gita}.`
+      ? `
+      Act as Lord Krishna, use the teachings of the Bhagavad Gita. I am unsure about what the right path for me is.
+      ${Gita}.`
+      : `${language}
+      Can you please guide me and help me find clarity? Ensure each generated verse is between 150 and 200 words.
+      ${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
