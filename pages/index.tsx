@@ -80,15 +80,6 @@ const Home: NextPage = () => {
         <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
           Unlock the Power of AI with the Bhagavad Gita
         </h2>
-        <a
-          className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
-          href="https://www.sahu4you.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Github />
-          <p>Support this Project</p>
-        </a>
         <div className="max-w-xl w-full">
           <div className="flex mt-10 items-center space-x-3">
             <p className="text-left font-medium">
@@ -124,8 +115,15 @@ const Home: NextPage = () => {
           reverseOrder={false}
           toastOptions={{ duration: 2000 }}
         />
-        <p className="max-w-xl w-full p-4 rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100 dark:border-none border-0">Please Donate to support this project&nbsp;sahu4you@ybl</p>
-        <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
+        <a
+          className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mb-5"
+          href="https://www.sahu4you.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github />
+          <p>Support this Project</p>
+        </a><hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         
         <ResizablePanel>
           <AnimatePresence mode="wait">
@@ -156,8 +154,6 @@ const Home: NextPage = () => {
                           </div>
                         );
                       })}
-
-{!generatedBios && <div>Please Donate to support this project sahu4you@ybl</div>}
                   </div>
                 </>
               )}
