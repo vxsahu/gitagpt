@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   const prompt =
      language === "Funny"
       ? `Act as Lord Krishna and use the teachings of the Bhagavad Gita to help your friend Arjuna. ${Gita}.`
-      : `${language} Arjuna is in a great dilemma. I am unsure about what the right path for me is. Can you please guide me and help me find clarity?${Gita}.`
+      : `${language} Generate 2 verse from bhagavad gita with contect: ${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
