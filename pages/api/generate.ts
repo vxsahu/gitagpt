@@ -1,6 +1,4 @@
-import type { NextRequest } from "next/server";
 import { OpenAIStream, OpenAIStreamPayload } from "../../utils/OpenAIStream";
-import { generatePrompt, languages, languageType } from "../../utils/prompt";
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("Missing env var from OpenAI");
@@ -10,22 +8,14 @@ export const config = {
   runtime: "edge",
 };
 
-const handler = async (req: NextRequest): Promise<Response> => {
-  if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+const handler = async (req: Request): Promise<Response> => {
+  const { prompt } = (await req.json()) as {
+    prompt?: string;
+  };
+
+  if (!prompt) {
+    return new Response("No prompt in the request", { status: 400 });
   }
-
-  const { bio, language } = (await req.json()) as GenerateRequestBody;
-
-  if (!bio) {
-    return new Response("No bio in the request", { status: 400 });
-  }
-
-  if (!language || !languages.includes(language)) {
-    return new Response("Invalid language", { status: 400 });
-  }
-
-  const prompt = generatePrompt(bio, language);
 
   const payload: OpenAIStreamPayload = {
     model: "text-davinci-003",
@@ -34,7 +24,7 @@ const handler = async (req: NextRequest): Promise<Response> => {
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 200,
+    max_tokens: 500,
     stream: true,
     n: 1,
   };
