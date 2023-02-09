@@ -20,14 +20,11 @@ const Home: NextPage = () => {
 
   console.log("Streamed response: ", generatedBios);  
   
-const prompt =
+  const prompt =
      language === "Funny"
-     ? `You are GitaGPT, Answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline, and spirituality. ${bio}${
-        bio.slice(-1) === "." ? "" : "."
-      }`
-    : `${language} Give a clear and accurate solution. Ensure each generated verse is between 14 and 20 words, based on Bhagavad Gita. ${bio}${
-        bio.slice(-1) === "." ? "" : "."
-      }`;
+      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
+      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
+  ;
 
   const generateBio = async (e: any) => {
     e.preventDefault();
@@ -128,7 +125,7 @@ const prompt =
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      According to Bhagavad Geeta:
+                      Bhagavad Geeta say:
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
@@ -141,7 +138,7 @@ const prompt =
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
                               navigator.clipboard.writeText(generatedBio);
-                              toast("copied to clipboard", {
+                              toast("Copied to clipboard", {
                                 icon: "✂️",
                               });
                             }}
