@@ -14,21 +14,21 @@ import logo from './gita-gpt.svg';
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
-  const [bio, setBio] = useState("");
+  const [Gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
-  const [generatedBios, setGeneratedBios] = useState<String>("");
+  const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
-  console.log("Streamed response: ", generatedBios);  
+  console.log("Streamed response: ", generatedGitas);  
   
   const prompt =
      language === "Funny"
-      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${bio}.`
-      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${bio}.`
+      ? `You are Krishna, answer according to the 18 chapters and 700 verses of the Bhagavad Gita, which contains life lessons on morality, strength, discipline and spirituality, to get friend Arjuna out of trouble.${Gita}.`
+      : `${language} Give the right solution with clearly "1." and "2.". Make sure each generated Sloka is at least 14 words and at max 20 words and base them on this context: ${Gita}.`
   ;
 
-  const generateBio = async (e: any) => {
+  const generateGita = async (e: any) => {
     e.preventDefault();
-    setGeneratedBios("");
+    setGeneratedGitas("");
     setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       const { value, done: doneReading } = await reader.read();
       done = doneReading;
       const chunkValue = decoder.decode(value);
-      setGeneratedBios((prev) => prev + chunkValue);
+      setGeneratedGitas((prev) => prev + chunkValue);
     }
 
     setLoading(false);
@@ -85,8 +85,8 @@ const Home: NextPage = () => {
               🦚 Shri Krishna, Radhe Radhe 🦚</p>
           </div>
           <textarea
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            value={Gita}
+            onChange={(e) => setGita(e.target.value)}
             rows={4}
             className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
             placeholder={
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
-              onClick={(e) => generateBio(e)}
+              onClick={(e) => generateGita(e)}
             >
               Ask to GitaGPT &rarr;
             </button>
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
         <ResizablePanel>
           <AnimatePresence mode="wait">
             <motion.div className="space-y-10 my-10">
-              {generatedBios && (
+              {generatedGitas && (
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
@@ -130,22 +130,22 @@ const Home: NextPage = () => {
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                    {generatedBios
-                      .substring(generatedBios.indexOf("1") + 3)
+                    {generatedGitas
+                      .substring(generatedGitas.indexOf("1") + 3)
                       .split("2.")
-                      .map((generatedBio) => {
+                      .map((generatedGita) => {
                         return (
                           <div
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
-                              navigator.clipboard.writeText(generatedBio);
+                              navigator.clipboard.writeText(generatedGita);
                               toast("Copied to clipboard", {
                                 icon: "✂️",
                               });
                             }}
-                            key={generatedBio}
+                            key={generatedGita}
                           >
-                            <p>{generatedBio}</p>
+                            <p>{generatedGita}</p>
                           </div>
                         );
                       })}
