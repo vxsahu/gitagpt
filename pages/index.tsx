@@ -175,7 +175,6 @@ const Home: NextPage = () => {
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Sinner, can find salvation.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Seeker, can achieve Moksha.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Human, can find guidance.</li></ul>
-          </ul>
         </div>
       </main>
       <Footer />
