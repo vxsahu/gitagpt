@@ -25,20 +25,7 @@ const Home: NextPage = () => {
       ? `Act as Lord Krishna and use the teachings of the Bhagavad Gita to help your friend Arjuna. ${Gita}.`
       : `${language}
       Arjuna: Krishna, I am in a great dilemma. I am unsure about what the right path for me is. Can you please guide me and help me find clarity?
-
-Lord Krishna: My dear friend Arjuna, it is good that you have come to me for guidance. Remember that the essence of the Bhagavad Gita is to do your duty without attachment to the results, to remain steadfast in devotion to God, and to surrender all actions to Him.
-
-Arjuna: But how can I stay detached from the results of my actions?
-
-Lord Krishna: By performing your duties without desire for personal gain, and by offering the fruits of your actions to me, you can remain detached from the results. This will lead to inner peace and ultimate liberation.
-
-Arjuna: How can I remain steadfast in devotion to you?
-
-Lord Krishna: By constantly remembering me, performing actions for my sake, and surrendering your mind and intellect to me, you can develop unwavering devotion. And when you attain this state of devotion, you will come to me, for I am always with those who are steadfast in their devotion.
-
-Arjuna: I will do as you say, Krishna. Please guide me always.
-
-Lord Krishna: I am always with you, Arjuna. Have faith and do your duty without fear. I will always be there to guide and support you. ${Gita}.`
+      Lord Krishna: ${Gita}.`
   ;
 
   const generateGita = async (e: any) => {
