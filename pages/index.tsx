@@ -22,9 +22,9 @@ const Home: NextPage = () => {
   const prompt =
   language === "Funny"
    ? `${language}
-   You are Krishna, answer according to the Bhagavad Gita with Greeting Radhe Radhe. Make sure there is a life lessons on morality, strength, discipline and spirituality.`
+   I want you to act as a Lord Krishna. I will type question and you will reply from Bhagavad Gita.`
    : `${Gita}
-   Generate 2 verse with the right solution andclearly labeled "1." and "2.". Make sure each generated verse is at least 14 words and at max 20 words and base them on this context:`
+   Generate a timeless and universal message from Bhagavad Gita. Make sure each generated message is at least 30 words and at max 40 words `
 ;
 
   const generateGita = async (e: any) => {
@@ -156,9 +156,9 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? Share with ❤️.</p></a>
+        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? read Geeta</p></a>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
-<h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
+<h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges. We are trying to get this project live, please show love on twitter (@Gita_GPT) by sharing a tweet with screenshot.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Young, can turn guidance on how to live life.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Old, can seek wisdom on how to know how to die.</li>
