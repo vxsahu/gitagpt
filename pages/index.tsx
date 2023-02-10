@@ -82,7 +82,7 @@ const Home: NextPage = () => {
         </h2>
         <div className="max-xl w-full">
           <div className="mt-10 items-center space-x-3">
-            <p className="text-center font-medium text-slate-700 mt-5 mb-5">2.71,108+ Updesh generated</p>
+            <p className="text-center font-medium text-slate-700 mt-5 mb-5">3,59,108+ Updesh generated</p>
             <strong className="text-center font-medium">
               🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
@@ -119,8 +119,6 @@ const Home: NextPage = () => {
           toastOptions={{ duration: 2000 }}
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
-        
-        
         <ResizablePanel>
           <AnimatePresence mode="wait">
             <motion.div className="text-left space-y-10 my-10">
@@ -157,7 +155,8 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? Share with ❤️.</p></a>
+        <div className="my-3 cursor-pointer rounded-xl border border-gray-300 py-2 px-2">Gita GPT is an AI Chatbot based on Bhagavad Gita, which makes such wonderful things to know more about our culture. We need donations to continue building: <strong>sahuyou@ybl</strong></div>
+        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Share this project with the ones you love ❤️</p></a>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
 <h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
