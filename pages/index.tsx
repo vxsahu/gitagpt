@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import DropDown, { languageType } from "../components/DropDown";
 import Footer from "../components/Footer";
@@ -19,7 +19,6 @@ const Home: NextPage = () => {
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
   console.log("Streamed response: ", generatedGitas);  
-  
   const prompt =
   language === "Funny"
    ? `${language}
@@ -106,7 +105,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               disabled
             >
               <LoadingDots color="white" style="large" />
