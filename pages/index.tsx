@@ -21,10 +21,8 @@ const Home: NextPage = () => {
   console.log("Streamed response: ", generatedGitas);  
   const prompt =
   language === "Funny"
-   ? `${language}
-   I want you to act as a Lord Krishna. I will type question and you will reply from Bhagavad Gita.`
-   : `${Gita}
-   Generate a timeless and universal message from Bhagavad Gita. Make sure each generated message is at least 30 words and at max 40 words `
+   ? `I want you to act as a Lord Krishna. I will type question and you will reply from Bhagavad Gita. Make sure each generated bio is at max 20 words and base it on this context: ${language}`
+   : `Generate ${Gita} answers from Bhagavad Gita. Make sure each generated verse labeled by is atleast 30 words and at max 40 words and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: `
 ;
 
   const generateGita = async (e: any) => {
@@ -76,7 +74,7 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col items-center justify-center text-center p-4">
-        <h2 className="sm:text-xl text-xl max-w-2xl font-bold text-slate-700 pt-5 pt-4 py-4">
+        <h2 className="sm:text-2xl text-xl max-w-6xl font-light text-slate-700 pt-5 pt-4 py-4">
         Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-xl w-full">
@@ -89,7 +87,7 @@ const Home: NextPage = () => {
             value={Gita}
             onChange={(e) => setGita(e.target.value)}
             rows={4}
-            className="w-full rounded-md border-0 focus:border-red focus:ring-red my-5 bg-gray-100  dark:border-none border-0"
+            className="w-full rounded-md border-0 focus:border-red focus:ring-red mt-5 bg-gray-100 border-0"
             placeholder={
               "How can I find inner peace?"
             }
@@ -97,7 +95,7 @@ const Home: NextPage = () => {
 
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
               onClick={(e) => generateGita(e)}
             >
               Ask GitaGPT &rarr;
@@ -156,7 +154,7 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? One share for ❤️ </p></a>
+        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? then Show with ❤️</p></a>
         <p className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">We are trying to get this project live, please show love on twitter (@Gita_GPT) by sharing a tweet with screenshot.</p>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
 <h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
