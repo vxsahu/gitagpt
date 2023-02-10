@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import DropDown, { languageType } from "../components/DropDown";
 import Footer from "../components/Footer";
@@ -21,14 +21,12 @@ const Home: NextPage = () => {
   console.log("Streamed response: ", generatedGitas);  
   
   const prompt =
-     language === "Funny"
-      ? `
-      Act as Lord Krishna, use the teachings of the Bhagavad Gita. I am unsure about what the right path for me is.
-      ${Gita}.`
-      : `${language}
-      Can you please guide me and help me find clarity? Ensure each generated verse is between 150 and 200 words.
-      ${Gita}.`
-  ;
+  language === "Funny"
+   ? `${language}
+   You are Krishna, answer according to the Bhagavad Gita with Greeting Radhe Radhe. Make sure there is a life lessons on morality, strength, discipline and spirituality.`
+   : `${Gita}
+   Generate 2 verse with the right solution andclearly labeled "1." and "2.". Make sure each generated verse is at least 14 words and at max 20 words and base them on this context:`
+;
 
   const generateGita = async (e: any) => {
     e.preventDefault();
@@ -71,20 +69,20 @@ const Home: NextPage = () => {
 
   return (
     
-    <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+    <div className="flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
-      <main className="innerbox flex flex-1 w-full flex-col items-center justify-center text-center px-4">
-        <h2 className="sm:text-xl text-xl max-w-2xl font-medium text-slate-900">
-          Unlock the Power of AI with the Bhagavad Gita
+      <main className="max-w-5xl innerbox flex flex-1 w-full flex-col items-center justify-center text-center p-4">
+        <h2 className="sm:text-xl text-xl max-w-2xl font-bold text-slate-700 pt-5 pt-4 py-4">
+        Unlock the Power of AI with the Bhagavad Gita
         </h2>
-        <div className="max-w-xl w-full">
+        <div className="max-xl w-full">
           <div className="mt-10 items-center space-x-3">
-            <p className="text-center font-medium text-slate-700">2.71,108+ Updesh generated</p>
+            <p className="text-center font-medium text-slate-700 mt-5 mb-5">2.71,108+ Updesh generated</p>
             <strong className="text-center font-medium">
               🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
@@ -108,7 +106,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
               disabled
             >
               <LoadingDots color="white" style="large" />
@@ -125,7 +123,7 @@ const Home: NextPage = () => {
         
         <ResizablePanel>
           <AnimatePresence mode="wait">
-            <motion.div className="space-y-10 my-10">
+            <motion.div className="text-left space-y-10 my-10">
               {generatedGitas && (
                 <>
                   <div>
@@ -133,7 +131,7 @@ const Home: NextPage = () => {
                       Bhagavad Geeta say:
                     </h2>
                   </div>
-                  <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
+                  <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                       .substring(generatedGitas.indexOf("1") + 3)
                       .split("2.")
@@ -149,7 +147,7 @@ const Home: NextPage = () => {
                             }}
                             key={generatedGita}
                           >
-                            <p>{generatedGita}</p>
+                            <p className="font-normal	">{generatedGita} - Krishna</p>
                           </div>
                         );
                       })}
@@ -160,7 +158,7 @@ const Home: NextPage = () => {
           </AnimatePresence>
         </ResizablePanel>
         <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? Share with ❤️.</p></a>
-        <div className="max-w-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
+        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
 <h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
 <li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Young, can turn guidance on how to live life.</li>
