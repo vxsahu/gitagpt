@@ -13,17 +13,19 @@ import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
 
 const Home: NextPage = () => {
+  const [response, setResponse] = useState<Record<string, unknown> | null>(
+    null
+  );
   const [loading, setLoading] = useState(false);
   const [Gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
   console.log("Streamed response: ", generatedGitas);  
-  const prompt =
-  language === "Funny"
-   ? `I want you to act as a Lord Krishna. I will type question and you will reply from Bhagavad Gita. Make sure each generated bio is at max 20 words and base it on this context: ${language}`
-   : `Generate ${Gita} answers from Bhagavad Gita. Make sure each generated verse labeled by is atleast 30 words and at max 40 words and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: `
-;
+
+  const prompt = `Act like Lord Krishna, Give answer from the teachings of Bhagavad Gita ${language}. Generate a verse sure each generated verse is atleast 20 words and at max 25 words and based on this context: ${Gita}${
+    Gita.slice(-1) === "." ? "" : "."
+  }`;
 
   const generateGita = async (e: any) => {
     e.preventDefault();
@@ -38,13 +40,24 @@ const Home: NextPage = () => {
         prompt,
       }),
     });
-    console.log("Edge function returned.");
 
     if (!response.ok) {
-      throw new Error(response.statusText);
+      setResponse({
+        status: response.status,
+        body: await response.text(),
+        headers: {
+          "X-Ratelimit-Limit": response.headers.get("X-Ratelimit-Limit"),
+          "X-Ratelimit-Remaining": response.headers.get(
+            "X-Ratelimit-Remaining"
+          ),
+          "X-Ratelimit-Reset": response.headers.get("X-Ratelimit-Reset"),
+        },
+      });
+      setLoading(false);
+      alert(`Rate limit reached, try again after one minute.`);
+      return;
     }
 
-    // This data is a ReadableStream
     const data = response.body;
     if (!data) {
       return;
@@ -64,9 +77,25 @@ const Home: NextPage = () => {
     setLoading(false);
   };
 
+  const isDisabled = () => {
+    const trimmedGita = Gita.trim();
+    if (trimmedGita.length === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const limitCharacters = (e: any) => {
+    if (e.target.value.length > 300) {
+      e.target.value = e.target.value.substr(0, 300);
+      toast.error("You have reached the maximum number of characters.");
+    }
+  };
+
   return (
     
-    <div className="flex mx-auto flex-col items-center justify-center min-h-screen">
+    <div className="bg-gray-100 flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
         <link rel="icon" href="/favicon.ico" />
@@ -74,20 +103,20 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col items-center justify-center text-center p-4">
-        <h2 className="sm:text-2xl text-xl max-w-6xl font-light text-slate-700 pt-5 pt-4 py-4">
+        <h2 className="text-xl font-light text-slate-900 mx-auto">
         Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-xl w-full">
           <div className="mt-10 items-center space-x-3">
-            <p className="text-center font-medium text-slate-700 mt-5 mb-5">2.71,108+ Updesh generated</p>
-            <strong className="text-center font-medium">
+            <p className="text-center font-bold text-slate-700 mt-5 mb-5">5,32,112+ Updesh generated</p>
+            <strong className="text-center font-light">
               🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
           <textarea
             value={Gita}
             onChange={(e) => setGita(e.target.value)}
             rows={4}
-            className="w-full rounded-md border-0 focus:border-red focus:ring-red mt-5 bg-gray-100 border-0"
+            className="sm:text-xl w-full rounded-xl focus:border-red focus:ring-black mt-5 bg-white border-0"
             placeholder={
               "How can I find inner peace?"
             }
@@ -95,7 +124,7 @@ const Home: NextPage = () => {
 
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
               onClick={(e) => generateGita(e)}
             >
               Ask GitaGPT &rarr;
@@ -103,7 +132,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
               disabled
             >
               <LoadingDots color="white" style="large" />
@@ -131,20 +160,23 @@ const Home: NextPage = () => {
                   <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                       .substring(generatedGitas.indexOf("1") + 3)
-                      .split("2.")
+                      .split(/[1-3]\./)
                       .map((generatedGita) => {
+                        const trimmedGita = generatedGita.trim();
                         return (
+
                           <div
                             className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
                             onClick={() => {
                               navigator.clipboard.writeText(generatedGita);
+                              `${trimmedGita} (Generated from https://www.gitagpt.in/)`
                               toast("Copied to clipboard", {
                                 icon: "✂️",
                               });
                             }}
-                            key={generatedGita}
+                            key={Gita}
                           >
-                            <p className="font-normal	">{generatedGita} - Krishna</p>
+                            <p className="font-normal	">{generatedGita}</p>
                           </div>
                         );
                       })}
@@ -154,27 +186,27 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? then Show with ❤️</p></a>
-        <p className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">We are trying to get this project live, please show love on twitter (@Gita_GPT) by sharing a tweet with screenshot.</p>
+        <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Share this project to spread ❤️</p></a>
+        <p className="mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Express your love by taking a <strong>screenshot 🤳🏻</strong> of Shri <strong>Krishna's 🦚 Gita Upadesh</strong> and tweeting 🐥 it.</p>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
 <h2 className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Young, can turn guidance on how to live life.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Old, can seek wisdom on how to know how to die.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Ignorant, can find enlightenment and become wise.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Learned, can cultivate humility.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Rich, can learn compassion.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Dreamer, can find enchantment.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Practical, can gain counsel.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weak, can find strength.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Strength, can receive direction.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Humble, can find exaltation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weary, can find rest.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Troubled, can find peace.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Doubting, can receive assurance.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Sinner, can find salvation.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Seeker, can achieve Moksha.</li>
-<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Human, can find guidance.</li></ul>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Young 👦🏻, can turn guidance on how to live life.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Old 👵, can seek wisdom on how to know how to die.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Ignorant 🪬, can find enlightenment and become wise.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Learned 🎅🏻, can cultivate humility.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Rich 😇, can learn compassion.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Dreamer 😘, can find enchantment.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Practical 🕺🏻, can gain counsel.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weak 🪫, can find strength.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Strength 🔋, can receive direction.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Humble 🌿, can find exaltation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Weary 😩, can find rest.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Troubled 🐍, can find peace.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Doubting 🤔, can receive assurance.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Sinner 👨🏻‍🎤, can find salvation.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Seeker 🎢, can achieve Moksha.</li>
+<li className="mx-4 mr-2 shrink-0 rounded-full px-4 py-1 text-sm">The Human 🚶🏻, can find guidance.</li></ul>
         </div>
       </main>
       <Footer />
