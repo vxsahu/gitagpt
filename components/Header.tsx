@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex justify-center items-center w-full bg-gray-100">
+    <header className="pt-5 pb-5 flex justify-center items-center w-full bg-white-100">
       <Link href="https://www.gitagpt.in/" className="flex space-x-3">
         <Image
           alt="GitaGPT"
