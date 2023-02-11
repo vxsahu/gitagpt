@@ -18,13 +18,13 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   const payload: OpenAIStreamPayload = {
-    model: "text-davinci-002",
+    model: "text-davinci-003",
     prompt,
     temperature: 0.7,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
-    max_tokens: 200,
+    max_tokens: 100,
     stream: true,
     n: 1,
   };
