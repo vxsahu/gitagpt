@@ -17,6 +17,7 @@ const Home: NextPage = () => {
   const [Gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
+  const [errorMessage, setErrorMessage] = useState<String>("")
 
   console.log("Streamed response: ", generatedGitas);  
   const prompt =
@@ -29,39 +30,47 @@ const Home: NextPage = () => {
     e.preventDefault();
     setGeneratedGitas("");
     setLoading(true);
-    const response = await fetch("/api/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt,
-      }),
-    });
-    console.log("Edge function returned.");
+    setErrorMessage("");
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt,
+        }),
+      });
+      console.log("Edge function returned.");
+      
+      if (!response.ok) {
+        // throw new Error(response.statusText);
+        setErrorMessage(`${response.statusText}. Please try again later.` || "Something went wrong. Please try again later.")
+      }
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
+      // This data is a ReadableStream
+      const data = response.body;
+      if (!data) {
+        return;
+      }
+
+      const reader = data.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value);
+        setGeneratedGitas((prev) => prev + chunkValue);
+      }
+    } catch(e) {
+      console.log(e)
+      // console.log("e.message", e.message)
+      setErrorMessage("Something went wrong. Please try again later.")
+    } finally {
+      setLoading(false);
     }
-
-    // This data is a ReadableStream
-    const data = response.body;
-    if (!data) {
-      return;
-    }
-
-    const reader = data.getReader();
-    const decoder = new TextDecoder();
-    let done = false;
-
-    while (!done) {
-      const { value, done: doneReading } = await reader.read();
-      done = doneReading;
-      const chunkValue = decoder.decode(value);
-      setGeneratedGitas((prev) => prev + chunkValue);
-    }
-
-    setLoading(false);
   };
 
   return (
@@ -92,7 +101,10 @@ const Home: NextPage = () => {
               "How can I find inner peace?"
             }
             />
-
+          {/* Display error message below */}
+          {errorMessage && (
+            <p className="text-center font-medium text-red-500 mt-5 mb-5">{errorMessage}</p>
+          )}
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-medium text-xl px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
@@ -116,44 +128,45 @@ const Home: NextPage = () => {
           toastOptions={{ duration: 2000 }}
         />
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
-        
-        
-        <ResizablePanel>
-          <AnimatePresence mode="wait">
-            <motion.div className="text-left space-y-10 my-10">
-              {generatedGitas && (
-                <>
-                  <div>
-                    <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      Bhagavad Geeta say:
-                    </h2>
-                  </div>
-                  <div className="space-y-8 flex flex-col max-xl mx-auto">
-                    {generatedGitas
-                      .substring(generatedGitas.indexOf("1") + 3)
-                      .split("2.")
-                      .map((generatedGita) => {
-                        return (
-                          <div
-                            className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                            onClick={() => {
-                              navigator.clipboard.writeText(generatedGita);
-                              toast("Copied to clipboard", {
-                                icon: "✂️",
-                              });
-                            }}
-                            key={generatedGita}
-                          >
-                            <p className="font-normal	">{generatedGita} - Krishna</p>
-                          </div>
-                        );
-                      })}
-                  </div>
-                </>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </ResizablePanel>
+        {/* No need to show the response if there is any error */}
+        {!errorMessage && (
+          <ResizablePanel>
+            <AnimatePresence mode="wait">
+              <motion.div className="text-left space-y-10 my-10">
+                {generatedGitas && (
+                  <>
+                    <div>
+                      <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
+                        Bhagavad Geeta say:
+                      </h2>
+                    </div>
+                    <div className="space-y-8 flex flex-col max-xl mx-auto">
+                      {generatedGitas
+                        .substring(generatedGitas.indexOf("1") + 3)
+                        .split("2.")
+                        .map((generatedGita) => {
+                          return (
+                            <div
+                              className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
+                              onClick={() => {
+                                navigator.clipboard.writeText(generatedGita);
+                                toast("Copied to clipboard", {
+                                  icon: "✂️",
+                                });
+                              }}
+                              key={generatedGita}
+                            >
+                              <p className="font-normal	">{generatedGita} - Krishna</p>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </ResizablePanel>
+        )}
         <a className="flex max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100 mt-5 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Support this project? then Show with ❤️</p></a>
         <p className="text-left mt-6 mb-6 space-y-4 leading-7 text-slate-700 sm:text-xl">We are trying to get this project live, please show love on twitter (@Gita_GPT) by sharing a tweet with screenshot.</p>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-8 ring-1 ring-slate-900/5">
