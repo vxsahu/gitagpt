@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
   console.log("Streamed response: ", generatedGitas);  
 
-  const prompt = `Act like Lord Krishna, Give answer from the teachings of Bhagavad Gita ${language}. Generate a verse sure each generated verse is atleast 20 words and at max 25 words and based on this context: ${Gita}${
+  const prompt = `Act like Lord Krishna, Give answer from the teachings of Bhagavad Gita ${language}. Generated relevent verse with reference at max 30 words: ${Gita}${
     Gita.slice(-1) === "." ? "" : "."
   }`;
 
