@@ -1,8 +1,4 @@
-# [GitaGPT.in](https://www.gitagpt.in/)
-
-
-
-
+# Gita GPT - Ask Krishna with Bhagavad Gita Chatbot
 
 ## What is GitaGPT?
 
