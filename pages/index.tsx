@@ -109,13 +109,13 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="max-w-5xl innerbox flex flex-1 w-full flex-col items-center justify-center text-center p-4">
-        <h2 className="text-xl font-light text-slate-900 mx-auto pt-4 pb-4">
+      <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
+        <h2 className="text-xl font-light text-slate-900 mx-auto pt-4 pb-5">
         Unlock the Power of AI with the Bhagavad Gita
         </h2>
         <div className="max-xl w-full">
-          <div className="mb-10 space-x-3">
-            <p className="text-center font-bold text-slate-700 mb-5">7,33,108+ Updesh generated</p>
+          <div className="space-x-3">
+            <p className="text-center font-bold text-slate-600 mb-5">7,33,108+ Updesh generated</p>
             <strong className="text-center font-light">
               🦚 Shri Krishna, Radhe Radhe 🦚</strong>
           </div>
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
             value={Gita}
             onChange={(e) => setGita(e.target.value)}
             rows={4}
-            className="sm:text-xl w-full rounded-xl focus:border-red focus:ring-black mt-5 bg-white border-0"
+            className="sm:text-xl w-full rounded-xl focus:border-red focus:ring-black mt-5 bg-white border-0 mt-5"
             placeholder={
               "How can I find inner peace?"
             }
@@ -160,7 +160,7 @@ const Home: NextPage = () => {
               {generatedGitas && (
                 <>
                   <div>
-                    <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
+                    <h2 className="sm:text-4xl text-3xl font-bold text-slate-800 mx-auto">
                       Bhagavad Geeta say:
                     </h2>
                   </div>
@@ -193,18 +193,16 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex w-half max-w items-center justify-center space-x-2 rounded-full border border-gray-600 bg-white px-4 py-2 text-bold text-slate-800 transition-colors hover:bg-gray-100 mt-1 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Love this project ❤️</p></a>
-        <p className="mt-6 mb-6 space-y-4 leading-7 text-slate-800 text-medium">Express your love by taking a <strong>screenshot 🤳🏻</strong> of Shri <strong>Krishna's 🦚 Gita Upadesh</strong> and tweeting 🐥 it.</p>
+        <a className="flex w-half max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 font-bold text-slate-800 transition-colors hover:bg-gray-100 mt-1 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Love this project ❤️</p></a>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 ring-1 ring-slate-900/5">
-<h2 className="text-left space-y-4 leading-7 text-slate-700 text-xl sm:text-xl">Talk to Lord Krishna!</h2>
-<p>
+<h2 className="text-left pb-4 space-y-4 leading-7 text-slate-800 text-bold text-xl">Talk to Lord Krishna!</h2>
+<p className="text-slate-700">
 GitaGPT is an AI Chatbot launched to solve problems from Holy Bhagavad Gita. Ask anything like any miracle, powerful mantras that help in real life.
 </p>
         </div>
-
-
+        <p className="mt-6 mb-6 space-y-4 leading-7 text-slate-700 text-medium">Express your love by taking a <strong>screenshot 🤳🏻</strong> of Shri <strong>Krishna's 🦚 Gita Upadesh</strong> and tweeting 🐥 it.</p>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 ring-1 ring-slate-900/5">
-<h2 className="text-left space-y-4 leading-7 text-slate-700 text-xl sm:text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
+<h2 className="text-left pb-4 space-y-4 leading-7 text-slate-800 text-bold text-xl">Bhagavad Gita holds the key to unlocking answers to every query and challenges.</h2>
 <ul className="list-disc text-left text-gray-900 my-5">
 <li className="mx-4 mr-2 shrink-0 rounded-full px-2 py-1 text-sm">The Young 👦🏻, can turn guidance on how to live life.</li>
 <li className="mx-4 mr-2 shrink-0 rounded-full px-2 py-1 text-sm">The Old 👵, can seek wisdom on how to know how to die.</li>
