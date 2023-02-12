@@ -1,5 +1,9 @@
 # Gita GPT - Ask Krishna with Bhagavad Gita Chatbot
 
+[![Bhagavad Gita with AI](./public/og-image.png)](https://www.gitagpt.in)
+
+
+
 ## What is GitaGPT?
 
 GitaGPT is your virtual gateway to the teachings of Lord Krishna, as revealed in the Holy Bhagavad Gita. With GitaGPT, you can have a one-on-one conversation with Lord Krishna, asking for guidance and wisdom on life's challenges. Whether you're seeking a miracle to overcome a difficult situation, a powerful mantra to help you navigate daily life, or solutions to specific problems, GitaGPT is here to help.
