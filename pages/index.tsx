@@ -100,7 +100,7 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
-        <div className="max-xl w-full p-4">
+        <div className="max-xl w-full my-10">
           <div className="space-x-3">
             <p className="sm:text-2xl text-xl font-bold">
             What troubles you, my friend?</p>
