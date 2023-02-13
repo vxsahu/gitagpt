@@ -196,8 +196,8 @@ const Home: NextPage = () => {
               Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
               <button
               className="inline-block flex-warp w-half rounded-full border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
-              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
-            >
+              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener"
+>
               Support this project ❤️
             </button>
             
