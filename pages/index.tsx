@@ -26,9 +26,7 @@ const Home: NextPage = () => {
         const prompt =
         language === "Funny"
          ? `You are Krishna from Mahabharata, and Answer help of Bhagavad Gita, , each consisting of at least 30 words.
-         ${language}` 
-         :
-         `Identify question and answer from Bhagavad Gita with a relevent verse: ${Gita}, and label each verse as "1.", "2.", and "3.". ${Gita.slice(-1 ) === "." ? "" : "."}`
+         ${language}` : `Identify question and answer from Bhagavad Gita with a relevent verse: ${Gita}, and label each verse as "1.", and "2.". ${Gita.slice(-1 ) === "." ? "" : "."}`
      ;
 
   const generateGita = async (e: any) => {
@@ -107,9 +105,8 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
-        <div className="max-xl w-full">
+        <div className="max-xl w-full p-4">
           <div className="space-x-3">
-            <p className="text-center font-light text-gray-700  px-4 py-2">🦚 Shri Krishna, Radhe Radhe 🦚</p>
             <p className="sm:text-2xl text-xl font-bold">
             What troubles you, my friend?</p>
           </div>
@@ -151,11 +148,6 @@ const Home: NextPage = () => {
           toastOptions={{ duration: 2000 }}
         />
         <hr className="space-y-10 my-10" />
-        <h2 className="text-xl font-medium text-slate-800 mx-auto px-4 py-2">
-        Unlock the power of Bhagavad Gita with AI
-        </h2>
-        <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium px-4 py-2">
-              Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
         
         <ResizablePanel>
           <AnimatePresence mode="wait">
@@ -164,13 +156,13 @@ const Home: NextPage = () => {
                 <>
                   <div>
                     <h2 className="sm:text-2xl text-xl font-bold text-slate-800 mx-auto">
-                      Bhagavad Geeta say:
+                      Krishna say:
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                       .substring(generatedGitas.indexOf("1") + 1)
-                      .split(/[1-3]\./)
+                      .split(/[1-2]\./)
                       .map((generatedGita) => {
                         const trimmedGita = generatedGita.trim();
                         return (
@@ -196,12 +188,26 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <a className="flex w-half max-w items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 font-normal text-slate-700 transition-colors hover:bg-gray-100 mt-1 mb-5" href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"><p>Please share and donate this project ❤️</p></a>
+        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-gray-200 p-4 mb-5 ring-1 ring-slate-900/5">
+            <h2 className="align-left text-xl font-medium text-slate-800 mx-auto py-2">
+              Talk to Lord Krishna!
+        </h2>
+        <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium py-2">
+              Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
+              <button
+              className="inline-block flex-warp w-half rounded-full border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
+              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
+              disabled
+            >
+              Support this project ❤️
+            </button>
+            
+</div>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
-<h2 className="text-left pb-4 space-y-4 leading-7 text-slate-800 text-bold text-xl">Talk to Lord Krishna!</h2>
-<p className="text-slate-700">
-GitaGPT is an AI Chatbot launched to solve problems from Holy Bhagavad Gita.
-</p>
+          <h2 className="text-left pb-4 space-y-4 leading-7 text-slate-800 text-bold text-xl">Unlock the power of Bhagavad Gita with AI</h2>
+          <p className="text-slate-700">
+            GitaGPT is an AI Chatbot launched to solve problems from Holy Bhagavad Gita.
+            </p>
 </div>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
 <ul className="list-disc text-left text-gray-900 my-5">
