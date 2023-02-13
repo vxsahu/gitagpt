@@ -194,18 +194,18 @@ const Home: NextPage = () => {
         </h2>
         <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium py-2">
               Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
-              <button
+              <a
               className="inline-block flex-warp w-half rounded-full border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
               href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
->
-              Support this project ❤️
-            </button>
+              >
+              <p>Support this project ❤️</p>
+            </a>
             
 </div>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
           <h2 className="text-left pb-4 space-y-4 leading-7 text-slate-800 text-bold text-xl">Unlock the power of Bhagavad Gita with AI</h2>
           <p className="text-slate-700">
-            GitaGPT is an AI Chatbot launched to solve problems from Holy Bhagavad Gita.
+            GitaGPT is an Bhagavad Gita AI Chatbot launched to solve problems from Holy Bhagavad Gita. gita can change life
             </p>
 </div>
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
