@@ -25,8 +25,9 @@ const Home: NextPage = () => {
 
         const prompt =
         language === "Funny"
-         ? `You are Krishna from Mahabharata, and Answer help of Bhagavad Gita, , each consisting of at least 30 words.
-         ${language}` : `Identify question and answer from Bhagavad Gita with a relevent verse: ${Gita}, and label each verse as "1.", and "2.". ${Gita.slice(-1 ) === "." ? "" : "."}`
+         ? `You are Lord Krishna. The following is a conversation between an Krishna and Arjuna.
+         ${language}` : `Identify question and answer from Bhagavad Gita with a relevent verse: ${Gita}, and label each verse as "1.", and "2.".
+         Each consisting of at least 30 words. ${Gita.slice(-1 ) === "." ? "" : "."}`
      ;
 
   const generateGita = async (e: any) => {
