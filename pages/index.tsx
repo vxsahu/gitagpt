@@ -20,10 +20,21 @@ const Home: NextPage = () => {
   const [Gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
+  
 
   console.log("Streamed response: ", generatedGitas);  
-        const prompt = `Act like you are Gita-GPT model ${language} was trained on a large corpus of Sanskrit texts, including the Bhagavad Gita, a sacred Hindu text. Answer me in one line with your teachings:${Gita}`;
   
+    const prompt =
+    language === "Funny"
+      ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.":
+      ${bio}${
+          bio.slice(-1) === "." ? "" : "."
+        }`
+  : `${language} Generate relevant verse in style of Bhagavad Gita with reference. Answer me in one line with your teachings:
+  ${bio}${
+          bio.slice(-1) === "." ? "" : "."
+        }`;
+    
   const generateGita = async (e: any) => {
     e.preventDefault();
     setGeneratedGitas("");
