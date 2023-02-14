@@ -22,18 +22,9 @@ const Home: NextPage = () => {
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
   
 
-  console.log("Streamed response: ", generatedGitas);  
+  console.log("Streamed response: ", generatedGitas);
   
-    const prompt =
-    language === "Funny"
-      ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.":
-      ${bio}${
-          bio.slice(-1) === "." ? "" : "."
-        }`
-  : `${language} Generate relevant verse in style of Bhagavad Gita with reference. Answer me in one line with your teachings:
-  ${bio}${
-          bio.slice(-1) === "." ? "" : "."
-        }`;
+          const prompt = `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.${language} Generate relevant verse in style of Bhagavad Gita with reference. Answer me in one line with your teachings:${Gita}`;
     
   const generateGita = async (e: any) => {
     e.preventDefault();
