@@ -22,14 +22,6 @@ export default function Header() {
         className="px-2 space-x-3 max-w-5xl align-center innerbox flex">
         <p className="my-2 mr-2 font-light text-base">Twitter</p>
       </Link>
-      <Link href="https://www.sahu4you.com/donate"
-        className="px-2 space-x-3 max-w-5xl align-center innerbox flex">
-        <p className="my-2 mr-2 font-light text-base">Donate</p>
-      </Link>
-      <Link href="/#"
-        className="px-2 space-x-3 max-w-5xl align-center innerbox flex">
-        <p className="bg-black rounded-xl text-white font-bold px-4 py-2 hover:bg-gray-200 w-half inline-block flex-wrap flex">Login</p>
-      </Link>
       </div>
       </div>
     </header>
