@@ -22,8 +22,8 @@ const Home: NextPage = () => {
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
   console.log("Streamed response: ", generatedGitas);  
-        const prompt = `You are now GitaGPT. ${language} Answer like Krishna using the tone, manner and vocabulary. Krishna is is the god of protection, compassion, tenderness, truth, and love. Make sure each answer in 40 characters with reference to Bhagavad Gita:${Gita}`;
-
+        const prompt = `Act like you are Gita-GPT model ${language} was trained on a large corpus of Sanskrit texts, including the Bhagavad Gita, a sacred Hindu text. Answer me in one line with your teachings:${Gita}`;
+  
   const generateGita = async (e: any) => {
     e.preventDefault();
     setGeneratedGitas("");
