@@ -24,8 +24,8 @@ const Home: NextPage = () => {
 
   console.log("Streamed response: ", generatedGitas);
   
-          const prompt = `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.${language} Generate relevant verse in style of Bhagavad Gita with reference. Answer me in one line with your teachings:${Gita}`;
-    
+  const prompt = `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.${language} Generate relevant verse in style of Bhagavad Gita with reference. Make sure Answer should be in maximum 50 words:${Gita}`;
+  
   const generateGita = async (e: any) => {
     e.preventDefault();
     setGeneratedGitas("");
