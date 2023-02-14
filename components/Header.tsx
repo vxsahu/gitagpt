@@ -14,7 +14,7 @@ export default function Header() {
           width={40}
           height={40}
         />
-        <h1 className="ml-2 justify-items-center my-5 font-bold text-xl">Gita GPT</h1>
+        <h1 className="ml-2 justify-items-center my-5 font-light text-xl">Gita GPT</h1>
       </Link>
       </div>
       <div className="gg-menu flex gg-menu w-3/4 flex items-center justify-end">
