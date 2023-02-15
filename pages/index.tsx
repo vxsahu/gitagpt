@@ -17,13 +17,13 @@ const Home: NextPage = () => {
   const [gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
-console.log("Streamed response: ", generatedGitas);  
-  
+
   const prompt =
   language === "Funny"
    ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
-   : `Generate ${gita} answers from Bhagavad Gita. Make sure each generated verse labeled by is atleast 30 words and at max 40 words and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: `
-;
+   : `Generate ${gita} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${bio}${
+    bio.slice(-1) === "." ? "" : "."
+  }`;
   
   const generateGita = async (e: any) => {	
     e.preventDefault();	
@@ -39,17 +39,22 @@ console.log("Streamed response: ", generatedGitas);
       }),	
     });	
     console.log("Edge function returned.");	
+
     if (!response.ok) {	
       throw new Error(response.statusText);	
+
+    }
 
     // This data is a ReadableStream	
     const data = response.body;	
     if (!data) {	
       return;	
     }	
+
     const reader = data.getReader();	
     const decoder = new TextDecoder();	
     let done = false;	
+
     while (!done) {	
       const { value, done: doneReading } = await reader.read();	
       done = doneReading;	
