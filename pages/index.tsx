@@ -13,55 +13,85 @@ import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
 
 const Home: NextPage = () => {
+  const [response, setResponse] = useState<Record<string, unknown> | null>(
+    null
+  );
   const [loading, setLoading] = useState(false);
   const [gita, setGita] = useState("");
-  const [language, setLanguage] = useState<languageType>("Professional");
+  const [language, setLanguage] = useState<languageType>("Basic");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
   const prompt =
-  language === "Funny"
+  language === "Krishna"
    ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
    : `Generate ${gita} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${gita}${
     gita.slice(-1) === "." ? "" : "."
   }`;
   
-  const generateGita = async (e: any) => {	
-    e.preventDefault();	
-    setGeneratedGitas("");	
-    setLoading(true);	
-    const response = await fetch("/api/generate", {	
-      method: "POST",	
-      headers: {	
-        "Content-Type": "application/json",	
-      },	
-      body: JSON.stringify({	
-        prompt,	
-      }),	
-    });	
-    console.log("Edge function returned.");	
+  const generateGita = async (e: any) => {
+    e.preventDefault();
+    setGeneratedGitas("");
+    setLoading(true);
+    const response = await fetch("/api/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt,
+      }),
+    });
 
-    if (!response.ok) {	
-      throw new Error(response.statusText);	
-
+    if (!response.ok) {
+      setResponse({
+        status: response.status,
+        body: await response.text(),
+        headers: {
+          "X-Ratelimit-Limit": response.headers.get("X-Ratelimit-Limit"),
+          "X-Ratelimit-Remaining": response.headers.get(
+            "X-Ratelimit-Remaining"
+          ),
+          "X-Ratelimit-Reset": response.headers.get("X-Ratelimit-Reset"),
+        },
+      });
+      setLoading(false);
+      alert(`Rate limit reached, try again after one minute.`);
+      return;
     }
 
-    // This data is a ReadableStream	
-    const data = response.body;	
-    if (!data) {	
-      return;	
-    }	
+    const data = response.body;
+    if (!data) {
+      return;
+    }
 
-    const reader = data.getReader();	
-    const decoder = new TextDecoder();	
-    let done = false;	
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
 
-    while (!done) {	
-      const { value, done: doneReading } = await reader.read();	
-      done = doneReading;	
-      const chunkValue = decoder.decode(value);	
-      setGeneratedGitas((prev) => prev + chunkValue);	
-    }	
-    setLoading(false);	
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      setGeneratedGitas((prev) => prev + chunkValue);
+    }
+
+    setLoading(false);
+  };
+
+  const isDisabled = () => {
+    const trimmedgita = gita.trim();
+    if (trimmedgita.length === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const limitCharacters = (e: any) => {
+    if (e.target.value.length > 300) {
+      e.target.value = e.target.value.substr(0, 300);
+      toast.error("You have reached the maximum number of characters.");
+    }
   };
     
  return (
