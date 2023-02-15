@@ -10,14 +10,14 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export type languageType = "Professional" | "Casual" | "Funny";
+export type languageType = "Basic" | "Kanha" | "Krishna";
 
 interface DropDownProps {
   language: languageType;
   setLanguage: (language: languageType) => void;
 }
 
-let languages: languageType[] = ["Professional", "Casual", "Funny"];
+let languages: languageType[] = ["Basic", "Kanha", "Krishna"];
 
 export default function DropDown({ language, setLanguage }: DropDownProps) {
   return (
