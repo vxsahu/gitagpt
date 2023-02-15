@@ -21,8 +21,8 @@ const Home: NextPage = () => {
   const prompt =
   language === "Funny"
    ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
-   : `Generate ${gita} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${bio}${
-    bio.slice(-1) === "." ? "" : "."
+   : `Generate ${gita} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${gita}${
+    gita.slice(-1) === "." ? "" : "."
   }`;
   
   const generateGita = async (e: any) => {	
