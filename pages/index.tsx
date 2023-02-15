@@ -142,7 +142,7 @@ const Home: NextPage = () => {
                                 icon: "✂️",
                               });
                             }}
-                            key={Gita}
+                            key={generatedGita}
                           >
                             <p className="font-normal	">{generatedGita}</p>
                           </div>
