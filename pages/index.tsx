@@ -13,86 +13,55 @@ import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
 
 const Home: NextPage = () => {
-  const [response, setResponse] = useState<Record<string, unknown> | null>(
-    null
-  );
   const [loading, setLoading] = useState(false);
   const [Gita, setGita] = useState("");
   const [language, setLanguage] = useState<languageType>("Professional");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
   
 
-  console.log("Streamed response: ", generatedGitas);
+  console.log("Streamed response: ", generatedGitas);  
   
-  const prompt = `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend.${language} Generate relevant verse in style of Bhagavad Gita with reference. Make sure Answer should be in maximum 50 words:${Gita}`;
+  const prompt =
+  language === "Funny"
+   ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
+   : `Generate ${Gita} answers from Bhagavad Gita. Make sure each generated verse labeled by is atleast 30 words and at max 40 words and clearly labeled "1." and "2.". Make sure each generated bio is at least 14 words and at max 20 words and base them on this context: `
+;
   
-  const generateGita = async (e: any) => {
-    e.preventDefault();
-    setGeneratedGitas("");
-    setLoading(true);
-    const response = await fetch("/api/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt,
-      }),
-    });
+  const generateGita = async (e: any) => {	
+    e.preventDefault();	
+    setGeneratedGitas("");	
+    setLoading(true);	
+    const response = await fetch("/api/generate", {	
+      method: "POST",	
+      headers: {	
+        "Content-Type": "application/json",	
+      },	
+      body: JSON.stringify({	
+        prompt,	
+      }),	
+    });	
+    console.log("Edge function returned.");	
+    if (!response.ok) {	
+      throw new Error(response.statusText);	
 
-    if (!response.ok) {
-      setResponse({
-        status: response.status,
-        body: await response.text(),
-        headers: {
-          "X-Ratelimit-Limit": response.headers.get("X-Ratelimit-Limit"),
-          "X-Ratelimit-Remaining": response.headers.get(
-            "X-Ratelimit-Remaining"
-          ),
-          "X-Ratelimit-Reset": response.headers.get("X-Ratelimit-Reset"),
-        },
-      });
-      setLoading(false);
-      alert(`Rate limit reached, try again in one minute.`);
-      return;
-    }
-
-    const data = response.body;
-    if (!data) {
-      return;
-    }
-
-    const reader = data.getReader();
-    const decoder = new TextDecoder();
-    let done = false;
-
-    while (!done) {
-      const { value, done: doneReading } = await reader.read();
-      done = doneReading;
-      const chunkValue = decoder.decode(value);
-      setGeneratedGitas((prev) => prev + chunkValue);
-    }
-
-    setLoading(false);
+    // This data is a ReadableStream	
+    const data = response.body;	
+    if (!data) {	
+      return;	
+    }	
+    const reader = data.getReader();	
+    const decoder = new TextDecoder();	
+    let done = false;	
+    while (!done) {	
+      const { value, done: doneReading } = await reader.read();	
+      done = doneReading;	
+      const chunkValue = decoder.decode(value);	
+      setGeneratedGitas((prev) => prev + chunkValue);	
+    }	
+    setLoading(false);	
   };
-
-  const isDisabled = () => {
-    const trimmedGita = Gita.trim();
-    if (trimmedGita.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const limitCharacters = (e: any) => {
-    if (e.target.value.length > 300) {
-      e.target.value = e.target.value.substr(0, 300);
-      toast.error("You have reached the maximum number of characters.");
-    }
-  };
-
-  return (
+    
+ return (
     
     <div className="bg-gray-100 flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
