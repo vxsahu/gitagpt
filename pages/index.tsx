@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
+import AudioPlayer from "../components/AudioPlayer";
 
 const Home: NextPage = () => {
   const [response, setResponse] = useState<Record<string, unknown> | null>(
@@ -95,7 +96,8 @@ const Home: NextPage = () => {
   };
     
  return (
-    
+
+ 
     <div className="bg-gray-100 flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
@@ -103,10 +105,11 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
-        <div className="max-xl w-full my-10">
+      <main className="max-w-5xl items-center justify-center text-center innerbox flex flex-1 w-full flex-col p-4">
+        <p className="font-medium flex mt-2 items-center space-x-3 text-slate-600">🦚 Karmanye Vadhikaraste, Ma Phaleshou Kadachana 🦚</p>
+        <div className="max-xl w-full my-5">
           <div className="space-x-3">
-            <p className="sm:text-2xl text-xl font-bold">
+            <p className="text-3xl font-bold text-slate-800 mb-4">
             What troubles you, my friend?</p>
           </div>
 
@@ -134,9 +137,9 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80"
+              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
               disabled
-            >
+            > Happening 
               <LoadingDots color="white" style="large" />
             </button>
           )}
@@ -194,7 +197,7 @@ Shree Krishna 🦚</h2>
               className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
               href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
               >
-              <p>Support this project ❤️</p>
+              <p>Learn More ❤️</p>
             </a>
             
 </div>
@@ -215,3 +218,5 @@ Shree Krishna 🦚</h2>
 };
 
 export default Home;
+
+
