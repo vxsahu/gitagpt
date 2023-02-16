@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   const prompt =
   language === "Krishna"
    ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
-   : `Generate ${gita} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${gita}${
+   : `Generate ${language} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${gita}${
     gita.slice(-1) === "." ? "" : "."
   }`;
   
@@ -124,11 +124,11 @@ const Home: NextPage = () => {
             }}
             rows={4}
             className="w-full text-xl font-light mt-5 rounded-lg shadow-sm border-0 focus:outline-none focus:shadow-outline"
-            placeholder={"For example, 'How can I find inner peace?'"}
+            placeholder={"What is the purpose of my life?'"}
           />
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-half inline-block flex-wrap flex"
+              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
               onClick={(e) => generateGita(e)}
             >
               Ask Krishna &rarr;
@@ -176,7 +176,7 @@ const Home: NextPage = () => {
                               }}
                               key={generatedGita}
                             >
-                              <p className="font-normal	">{generatedGita} - Krishna</p>
+                              <p className="font-normal	">{generatedGita}</p>
                             </div>
                         );
                       })}
@@ -191,12 +191,12 @@ const Home: NextPage = () => {
         <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">Find solace in the wisdom of
 Shree Krishna 🦚</h2>
 <p className="text-base font-light">GitaGPT is an "Bhagavad Gita AI Chatbot"</p>
-<p className="text-medium font-light">8,01,412+ Upadesh Generated</p>
+<p className="text-medium font-light">9,11,892+ Upadesh Generated</p>
               <a
               className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
               href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
               >
-              <p>Learn More ❤️</p>
+              <p>Support this project ❤️</p>
             </a>
             
 </div>
@@ -206,9 +206,18 @@ Shree Krishna 🦚</h2>
         </h2>
         <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium py-2">
               Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
-          <p className="text-slate-700">
-            
-            </p>
+              <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+           <li>Karma - action or work</li>
+           <li>Dharma - righteousness or duty</li>
+           <li>Yoga - union with the divine</li>
+           <li>Atman - the individual soul</li>
+           <li>Brahman - the universal soul or ultimate reality</li>
+           <li>Maya - illusion or the material world</li>
+           <li>Bhakti - devotion to God</li>
+           <li>Jnana - knowledge or wisdom</li>
+           <li>Moksha - liberation or freedom from suffering</li>
+            <li>Ahimsa - non-violence or non-harmfulness</li></ul>
+
 </div>
       </main>
       <Footer />
