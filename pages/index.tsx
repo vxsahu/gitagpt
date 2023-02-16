@@ -11,7 +11,6 @@ import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
-import AudioPlayer from "../components/AudioPlayer";
 
 const Home: NextPage = () => {
   const [response, setResponse] = useState<Record<string, unknown> | null>(
