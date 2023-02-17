@@ -109,20 +109,18 @@ const Home: NextPage = () => {
         <h2 className="sm:text-2xl text-xl font-bold mb-5">
             What troubles you, my friend?</h2>
           <div className="inset-y-0 left-0 flex items-center pl-3">
-          <input
-            value={gita}
-            onChange={(e) => setGita(e.target.value)}
-            onInput={limitCharacters}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !isDisabled()) {
-                e.preventDefault();
-                generateGita(e);
-              }
-            }}
-            rows={4}
-            className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 mr-2"
-            placeholder={"How can I find inner peace?"}
-          />
+          <input value={gita}
+  onChange={(e) => setGita(e.target.value)}
+  onInput={limitCharacters}
+  onKeyDown={(e) => {
+    if (e.key === "Enter" && !isDisabled()) {
+      e.preventDefault();
+      generateGita(e);
+    }
+  }}
+  className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 mr-2"
+  placeholder="How can I find inner peace?"
+/>
           {!loading && (
             <button
               className="bg-black rounded-xl text-white font-base p-4 hover:bg-black/80 w-half flex-none flex"
@@ -136,7 +134,7 @@ const Home: NextPage = () => {
               className="bg-black rounded-xl text-white font-base p-4 hover:bg-black/80 w-half flex-none flex"
               disabled
             >
-                <LoadingDots className="dot-typing" color="white" style="large" />
+              <LoadingDots color="white" style="large" />
             </button>
           )}
         </div>
