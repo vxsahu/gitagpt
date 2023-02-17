@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         },
       });
       setLoading(false);
-      alert(`Rate limit reached, try again after one minute.`);
+      alert(`Whoopsie! Looks like you've hit a little snag. It seems that you've exceeded your quota. Don't worry, though! Just take a deep breath and give it a minute. Try again in just 60 seconds and you'll be up and running in no time.`);
       return;
     }
 
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
   const limitCharacters = (e: any) => {
     if (e.target.value.length > 300) {
       e.target.value = e.target.value.substr(0, 300);
-      toast.error("You have reached the maximum number of characters.");
+      toast.error("Whoa, you're on a roll! But you've hit the max character limit. Keep up the good work, though!");
     }
   };
     
