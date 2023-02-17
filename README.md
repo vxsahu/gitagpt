@@ -1,14 +1,16 @@
-# Gita GPT - Unlock the Power of AI with Bhagavad Geeta
+# Gita GPT - references Bhagavad Gita to answer questions
 
 [![Bhagavad Gita with AI](./public/og-image.png)](https://www.gitagpt.in)
 
+Find solace in the wisdom of Shree Krishna
+
 ## What is GitaGPT?
 
-GitaGPT is your virtual gateway to the teachings of Lord Krishna, as revealed in the Holy Bhagavad Gita. With GitaGPT, you can have a one-on-one conversation with Lord Krishna, asking for guidance and wisdom on life's challenges. Whether you're seeking a miracle to overcome a difficult situation, a powerful mantra to help you navigate daily life, or solutions to specific problems, GitaGPT is here to help.
+Gita GPT is AI Chatbot it reference bhagavad gita verse when a user ask any question. its open source anyone can use and ask question. GitaGPT is your virtual gateway to the teachings of Lord Krishna, as revealed in the Holy Bhagavad Gita.
+
+Whether you're seeking a miracle to overcome a difficult situation, a powerful mantra to help you navigate daily life, or solutions to specific problems, GitaGPT is here to help.
+
 With our advanced algorithms and intuitive interface, GitaGPT makes it easy to integrate powerful language capabilities into your applications and workflows.
-
-With its advanced natural language processing capabilities, GitaGPT can understand your questions and provide insightful answers drawn from the timeless wisdom of the Bhagavad Gita. Whether you're a seasoned practitioner or just starting your spiritual journey, GitaGPT is the perfect tool for connecting with the divine and finding peace, purpose, and happiness in your life.
-
 
 ## Purpose of Bhagavad Gita AI
 
