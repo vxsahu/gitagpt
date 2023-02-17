@@ -18,17 +18,18 @@ const Home: NextPage = () => {
   );
   const [loading, setLoading] = useState(false);
   const [gita, setGita] = useState("");
-  const [error, setError] = useState(false);
   const [language, setLanguage] = useState<languageType>("Basic");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
-  const generateGita = async (e: any) => {
-    let prompt;
-    if (language == "Krishna"){
-      prompt = `Act like Lord Krishna from Bhagavad Gita ${language} Krishna is is the god of protection, compassion, tenderness, truth, and love.`;
-    } else{
-      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} in ${language} Complated answer in 40 characters with reference to Bhagavad Gita.`;
-    }
+   const prompt =
+   language === "Krishna"
+     ? `Act like Lord Krishna from Bhagavad Gita. Krishna is is the god of protection, compassion, tenderness, truth, and love${language}`
+     : `Generate 2 ${language} verse from from Bhagavad Gita clearly labeled "1." and "2.". Make sure each generated verse is Worth Reading and base it on this context: ${gita}${
+        gita.slice(-1) === "." ? "" : "."
+       }`;
+
+  
+   const generateGita = async (e: any) => {
     e.preventDefault();
     setGeneratedGitas("");
     setLoading(true);
@@ -41,15 +42,24 @@ const Home: NextPage = () => {
         prompt,
       }),
     });
-    console.log("Edge function returned.");
 
     if (!response.ok) {
-      setError(true);
+      setResponse({
+        status: response.status,
+        body: await response.text(),
+        headers: {
+          "X-Ratelimit-Limit": response.headers.get("X-Ratelimit-Limit"),
+          "X-Ratelimit-Remaining": response.headers.get(
+            "X-Ratelimit-Remaining"
+          ),
+          "X-Ratelimit-Reset": response.headers.get("X-Ratelimit-Reset"),
+        },
+      });
       setLoading(false);
-      throw new Error(response.statusText);
+      alert(`Rate limit reached, try again after one minute.`);
+      return;
     }
 
-    // This data is a ReadableStream
     const data = response.body;
     if (!data) {
       return;
@@ -69,8 +79,24 @@ const Home: NextPage = () => {
     setLoading(false);
   };
 
-  return (
+  const isDisabled = () => {
+    const trimmedgita = gita.trim();
+    if (trimmedgita.length === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
+  const limitCharacters = (e: any) => {
+    if (e.target.value.length > 300) {
+      e.target.value = e.target.value.substr(0, 300);
+      toast.error("You have reached the maximum number of characters.");
+    }
+  };
+    
+ return (
+    
     <div className="bg-gray-100 flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
@@ -79,21 +105,29 @@ const Home: NextPage = () => {
 
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
-        <div className="max-xl w-full my-5">
-        <h2 className="text-xl font-bold text-slate-700 mb-3">Find Solace in the wisdom of
-Shree Krishna</h2>
-<p className="text-slate-500">People Asked me over <span id="countUp" data-count-to="119136" className="text-bold">10,82,36+</span> Shri Krishna Updesh</p>
-          <p className="font-bold flex mt-5 items-center space-x-3 text-slate-600">What troubles you, my friend?</p>
+        <div className="max-xl w-full my-10">
+          <div className="space-x-3">
+            <p className="sm:text-2xl text-xl font-bold">
+            What troubles you, my friend?</p>
+          </div>
+
           <textarea
-          value={gita}
-          onChange={(e) => setGita(e.target.value)}
-            rows={3}
+            value={gita}
+            onChange={(e) => setGita(e.target.value)}
+            onInput={limitCharacters}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !isDisabled()) {
+                e.preventDefault();
+                generateGita(e);
+              }
+            }}
+            rows={4}
             className="w-full text-xl font-light mt-5 rounded-lg shadow-sm border-0 focus:outline-none focus:shadow-outline"
-            placeholder={"What is the purpose of my life?'"}
+            placeholder={"For example, 'How can I find inner peace?'"}
           />
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-base px-4 py-2 flex sm:mt-4 mt-5 hover:bg-black/80 w-half"
+              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-half inline-block flex-wrap flex"
               onClick={(e) => generateGita(e)}
             >
               Ask Krishna &rarr;
@@ -101,9 +135,9 @@ Shree Krishna</h2>
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-base px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-half"
+              className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80"
               disabled
-            > Happening 
+            >
               <LoadingDots color="white" style="large" />
             </button>
           )}
@@ -141,7 +175,7 @@ Shree Krishna</h2>
                               }}
                               key={generatedGita}
                             >
-                              <p className="font-normal	">{generatedGita}</p>
+                              <p className="font-normal	">{generatedGita} - Krishna</p>
                             </div>
                         );
                       })}
@@ -151,24 +185,30 @@ Shree Krishna</h2>
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <hr className="space-y-10 my-2" />
+        <hr className="space-y-10 my-5" />
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
-        <h2 className="text-xl text-slate-800 mx-auto py-2">
+        <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">Find solace in the wisdom of
+Shree Krishna 🦚</h2>
+<p className="text-base font-light">GitaGPT is an "Bhagavad Gita AI Chatbot"</p>
+<p className="text-medium font-light">8,01,412+ Upadesh Generated</p>
+              <a
+              className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
+              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
+              >
+              <p>Support this project ❤️</p>
+            </a>
+            
+</div>
+        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
+        <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">
               Unlock the power of Bhagavad Gita with AI
         </h2>
         <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium py-2">
               Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
-              <a
-              className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
-              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
-              ><p>Love this project ❤️</p>
-            </a>
-            </div>
-        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
-        <h2 className="text-xl text-slate-800 mx-auto py-2">Bhagavad Geeta Inspired AI App</h2>
-        <p className="text-medium font-light">Gita GPT is an AI-based language model that can generate text in both English and Hindi. If you encounter issues accessing the website, you can soon download the APK for the app.</p>
-        <p>GitaGPT's founder is also working on an ChatGPT's API to improve access to the language model's capabilities.</p>
-        </div>
+          <p className="text-slate-700">
+            
+            </p>
+</div>
       </main>
       <Footer />
     </div>
@@ -176,4 +216,3 @@ Shree Krishna</h2>
 };
 
 export default Home;
-
