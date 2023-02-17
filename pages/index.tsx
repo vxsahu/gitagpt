@@ -25,7 +25,7 @@ const Home: NextPage = () => {
   const generateGita = async (e: any) => {
     let prompt;
     if (language == "Krishna"){
-      prompt = `Act like Krishna from Bhagavad Gita ${gita}${gita.slice(-1) === "." ? "" : "."} ${language} Krishna is is the god of protection, compassion, tenderness, truth, and love.`;
+      prompt = `Act like Lord Krishna from Bhagavad Gita ${language} Krishna is is the god of protection, compassion, tenderness, truth, and love.`;
     } else{
       prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} in ${language} Complated answer in 40 characters with reference to Bhagavad Gita.`;
     }
@@ -128,7 +128,7 @@ Shree Krishna</h2>
                   <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                         .substring(generatedGitas.indexOf("1") + 3)
-                        .split("1.")
+                        .split("2.")
                         .map((generatedGita) => {
                           return (
                             <div
