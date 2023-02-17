@@ -25,9 +25,9 @@ const Home: NextPage = () => {
   const generateGita = async (e: any) => {
     let prompt;
     if (language == "Krishna"){
-      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} Act like Krishna from Bhagavad Gita ${language} response with a clear answer.`;
+      prompt = `Act like Krishna from Bhagavad Gita ${gita}${gita.slice(-1) === "." ? "" : "."} ${language} Krishna is is the god of protection, compassion, tenderness, truth, and love.`;
     } else{
-      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} in ${language} as a teacher, philosopher, and spiritual leader, and his teachings, spiritual leadership, and youthful exploits.`;
+      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} in ${language} Complated answer in 40 characters with reference to Bhagavad Gita.`;
     }
     e.preventDefault();
     setGeneratedGitas("");
