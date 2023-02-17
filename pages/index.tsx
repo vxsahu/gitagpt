@@ -82,7 +82,7 @@ const Home: NextPage = () => {
         <div className="max-xl w-full my-5">
         <h2 className="text-xl font-bold text-slate-700 mb-3">Find Solace in the wisdom of
 Shree Krishna</h2>
-<p className="text-slate-500">People Asked me over <span id="countUp" data-count-to="119136" class="text-bold">10,82,36+</span> Shri Krishna Updesh</p>
+<p className="text-slate-500">People Asked me over <span id="countUp" data-count-to="119136" className="text-bold">10,82,36+</span> Shri Krishna Updesh</p>
           <p className="font-bold flex mt-5 items-center space-x-3 text-slate-600">What troubles you, my friend?</p>
           <textarea
           value={gita}
