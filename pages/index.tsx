@@ -18,17 +18,17 @@ const Home: NextPage = () => {
   );
   const [loading, setLoading] = useState(false);
   const [gita, setGita] = useState("");
+  const [error, setError] = useState(false);
   const [language, setLanguage] = useState<languageType>("Basic");
   const [generatedGitas, setGeneratedGitas] = useState<String>("");
 
-  const prompt =
-  language === "Krishna"
-   ? `I want you to act like Krishna. I want you to respond and answer like Krishna using the tone, manner and vocabulary a casual friend would use. Do not write any explanations. Only answer like a friend: ${language}`
-   : `Generate ${language} relevent verse from Bhagavad Gita. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context: ${gita}${
-    gita.slice(-1) === "." ? "" : "."
-  }`;
-  
   const generateGita = async (e: any) => {
+    let prompt;
+    if (language == "Krishna"){
+      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} Act like Krishna from Bhagavad Gita ${language} response with a clear answer.`;
+    } else{
+      prompt = `Explain ${gita}${gita.slice(-1) === "." ? "" : "."} in ${language} as a teacher, philosopher, and spiritual leader, and his teachings, spiritual leadership, and youthful exploits.`;
+    }
     e.preventDefault();
     setGeneratedGitas("");
     setLoading(true);
@@ -41,24 +41,15 @@ const Home: NextPage = () => {
         prompt,
       }),
     });
+    console.log("Edge function returned.");
 
     if (!response.ok) {
-      setResponse({
-        status: response.status,
-        body: await response.text(),
-        headers: {
-          "X-Ratelimit-Limit": response.headers.get("X-Ratelimit-Limit"),
-          "X-Ratelimit-Remaining": response.headers.get(
-            "X-Ratelimit-Remaining"
-          ),
-          "X-Ratelimit-Reset": response.headers.get("X-Ratelimit-Reset"),
-        },
-      });
+      setError(true);
       setLoading(false);
-      alert(`Rate limit reached, try again after one minute.`);
-      return;
+      throw new Error(response.statusText);
     }
 
+    // This data is a ReadableStream
     const data = response.body;
     if (!data) {
       return;
@@ -78,25 +69,8 @@ const Home: NextPage = () => {
     setLoading(false);
   };
 
-  const isDisabled = () => {
-    const trimmedgita = gita.trim();
-    if (trimmedgita.length === 1) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  return (
 
-  const limitCharacters = (e: any) => {
-    if (e.target.value.length > 300) {
-      e.target.value = e.target.value.substr(0, 300);
-      toast.error("You have reached the maximum number of characters.");
-    }
-  };
-    
- return (
-
- 
     <div className="bg-gray-100 flex mx-auto flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
@@ -104,31 +78,22 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <main className="max-w-5xl items-center justify-center text-center innerbox flex flex-1 w-full flex-col p-4">
-        <p className="font-medium flex mt-2 items-center space-x-3 text-slate-600">🦚 Karmanye Vadhikaraste, Ma Phaleshou Kadachana 🦚</p>
+      <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
         <div className="max-xl w-full my-5">
-          <div className="space-x-3">
-            <p className="text-3xl font-bold text-slate-800 mb-4">
-            What troubles you, my friend?</p>
-          </div>
-
+        <h2 className="text-xl font-bold text-slate-700 mb-3">Find Solace in the wisdom of
+Shree Krishna</h2>
+<p className="text-slate-500">People Asked me over <span id="countUp" data-count-to="119136" class="text-bold">10,82,36+</span> Shri Krishna Updesh</p>
+          <p className="font-bold flex mt-5 items-center space-x-3 text-slate-600">What troubles you, my friend?</p>
           <textarea
-            value={gita}
-            onChange={(e) => setGita(e.target.value)}
-            onInput={limitCharacters}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" && !isDisabled()) {
-                e.preventDefault();
-                generateGita(e);
-              }
-            }}
-            rows={4}
+          value={gita}
+          onChange={(e) => setGita(e.target.value)}
+            rows={3}
             className="w-full text-xl font-light mt-5 rounded-lg shadow-sm border-0 focus:outline-none focus:shadow-outline"
             placeholder={"What is the purpose of my life?'"}
           />
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-base px-4 py-2 flex sm:mt-4 mt-5 hover:bg-black/80 w-half"
               onClick={(e) => generateGita(e)}
             >
               Ask Krishna &rarr;
@@ -136,7 +101,7 @@ const Home: NextPage = () => {
           )}
           {loading && (
             <button
-              className="bg-black rounded-xl text-white font-bold px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-full"
+              className="bg-black rounded-xl text-white font-base px-4 py-2 sm:mt-4 mt-5 hover:bg-black/80 w-half"
               disabled
             > Happening 
               <LoadingDots color="white" style="large" />
@@ -163,7 +128,7 @@ const Home: NextPage = () => {
                   <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                         .substring(generatedGitas.indexOf("1") + 3)
-                        .split("2.")
+                        .split("1.")
                         .map((generatedGita) => {
                           return (
                             <div
@@ -186,39 +151,24 @@ const Home: NextPage = () => {
             </motion.div>
           </AnimatePresence>
         </ResizablePanel>
-        <hr className="space-y-10 my-5" />
+        <hr className="space-y-10 my-2" />
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
-        <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">Find solace in the wisdom of
-Shree Krishna 🦚</h2>
-<p className="text-base font-light">GitaGPT is an "Bhagavad Gita AI Chatbot"</p>
-<p className="text-medium font-light">9,11,892+ Upadesh Generated</p>
-              <a
-              className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
-              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
-              >
-              <p>Support this project ❤️</p>
-            </a>
-            
-</div>
-        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
-        <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">
+        <h2 className="text-xl text-slate-800 mx-auto py-2">
               Unlock the power of Bhagavad Gita with AI
         </h2>
         <p className="mb-5 space-y-4 leading-7 text-slate-800 text-medium py-2">
               Bhagavad Gita holds the key to unlocking answers to every query and challenges. Ask anything like any miracle, powerful mantras that help in real life.</p>
-              <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-           <li>Karma - action or work</li>
-           <li>Dharma - righteousness or duty</li>
-           <li>Yoga - union with the divine</li>
-           <li>Atman - the individual soul</li>
-           <li>Brahman - the universal soul or ultimate reality</li>
-           <li>Maya - illusion or the material world</li>
-           <li>Bhakti - devotion to God</li>
-           <li>Jnana - knowledge or wisdom</li>
-           <li>Moksha - liberation or freedom from suffering</li>
-            <li>Ahimsa - non-violence or non-harmfulness</li></ul>
-
-</div>
+              <a
+              className="inline-block flex-warp w-half rounded-xl border border-gray-500 bg-white px-4 py-2 font-bold text-slate-700 transition-colors hover:bg-gray-100 my-5"
+              href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
+              ><p>Love this project ❤️</p>
+            </a>
+            </div>
+        <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
+        <h2 className="text-xl text-slate-800 mx-auto py-2">Bhagavad Geeta Inspired AI App</h2>
+        <p className="text-medium font-light">Gita GPT is an AI-based language model that can generate text in both English and Hindi. If you encounter issues accessing the website, you can soon download the APK for the app.</p>
+        <p>GitaGPT's founder is also working on an ChatGPT's API to improve access to the language model's capabilities.</p>
+        </div>
       </main>
       <Footer />
     </div>
@@ -226,5 +176,4 @@ Shree Krishna 🦚</h2>
 };
 
 export default Home;
-
 
