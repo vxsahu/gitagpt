@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex bg-white w-full items-center justify-center text-center border-b-1 border-gray-900 mx-auto innerbox flex flex-1 w-full flex-col items-center justify-center">
-      <div className="myhead bg-white flex max-w-5xl px-4 max-xl text-center text-3xl">
-      <div className="gg-head flex align-center text-center text-3xl">
+    <header className="bg-white border-b-1 border-gray-900 flex bg-white w-full mx-auto innerbox flex flex-1 w-full flex-col items-center justify-center p-4">
+      <div className="max-w-5xl flex justify-between flex px-4 max-xl w-full">
+      <div className="gg-head flex col-1 w-1/3 justify-start w-30 text-3xl">
         <Link href="https://www.gitagpt.in/"
-        className="my-5 text-slate-800">
+        className="flex items-center">
           <Image
           alt="GitaGPT"
           src="/logo.png"
@@ -16,10 +16,10 @@ export default function Header() {
         />
       </Link>
       </div>
-      <div className="gg-menu flex gg-menu flex items-center">
+      <div className="gg-menu flex items-center">
         <Link href="https://twitter.com/Gita_GPT"
         className="px-2 space-x-3 max-w-5xl align-center innerbox flex">
-        <p className="my-2 mr-2 font-light text-base">Twitter</p>
+        <p className="text-slate-800 px-4">Twitter</p>
       </Link>
       </div>
       </div>
