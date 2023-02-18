@@ -24,10 +24,9 @@ const Home: NextPage = () => {
    const prompt =
    language === "Krishna"
      ? `Act like Lord Krishna from Bhagavad Gita. Krishna is is the god of protection, compassion, tenderness, truth, and love${language}`
-     : `Generate 2 ${language} verse from from Bhagavad Gita clearly labeled "1." and "2.". Make sure each generated verse is Worth Reading and base it on this context: ${gita}${
+     : `Generate ${language} verse from Bhagavad Gita clearly labeled Chapter name. Make sure each generated verse is Worth Reading and base it on this context: ${gita}${
         gita.slice(-1) === "." ? "" : "."
        }`;
-
   
    const generateGita = async (e: any) => {
     e.preventDefault();
@@ -56,7 +55,7 @@ const Home: NextPage = () => {
         },
       });
       setLoading(false);
-      alert(`Friend! It seems that you have exceeded your quota. But don't you worry my friend! Just take a deep breath and give it a minute. Everything will be alright!`);
+      toast.error(`It seems that you have exceeded your quota. But don't you worry my friend! Just take a deep breath and give it a minute. Everything will be alright!`);
       return;
     }
 
@@ -106,11 +105,11 @@ const Home: NextPage = () => {
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4 my-10">
         <div className="max-xl w-full my-10">
-          <p className="text-xl font-bold text-gray-600 mb-5">Shri Krishna, Radhe Radhe 🦚</p>
-          <p className="text-gray-200 mb-5">Gita GPT is an AI chatbot that uses Bhagavad Gita references to answer your questions. It's an open platform, so feel free to ask Krishna anything you want.</p>
+          <p className="text-xl font-bold text-slate-700 mb-5">Shri Krishna, Radhe Radhe 🦚</p>
+          <p className="text-slate-700 mb-5">Gita GPT is an AI chatbot that uses Bhagavad Gita references to answer your questions. It's an open platform, so feel free to ask Krishna anything you want.</p>
         <h2 className="sm:text-2xl text-xl font-bold mb-5">
             What troubles you, my friend?</h2>
-          <div className="inset-y-0 left-0 flex items-center my-10 pl-3">
+          <div className="inset-y-0 left-0 flex items-center my-10">
           <input value={gita}
   onChange={(e) => setGita(e.target.value)}
   onInput={limitCharacters}
@@ -161,7 +160,7 @@ const Home: NextPage = () => {
                   <div className="space-y-8 flex flex-col max-xl mx-auto">
                     {generatedGitas
                         .substring(generatedGitas.indexOf("1") + 3)
-                        .split("2.")
+                        .split("1.")
                         .map((generatedGita) => {
                           return (
                             <div
