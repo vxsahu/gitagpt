@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         },
       });
       setLoading(false);
-      alert(`Vatas! Looks like you have exceeded your quota. Don't worry though! Just take a deep breath and give it a minute.`);
+      alert(`Vatas! It seems that you have exceeded your quota. But don't you worry my friend! Just take a deep breath and give it a minute. Everything will be alright!`);
       return;
     }
 
