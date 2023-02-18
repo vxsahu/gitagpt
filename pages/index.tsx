@@ -56,7 +56,7 @@ const Home: NextPage = () => {
         },
       });
       setLoading(false);
-      alert(`Vatas! It seems that you have exceeded your quota. But don't you worry my friend! Just take a deep breath and give it a minute. Everything will be alright!`);
+      alert(`Friend! It seems that you have exceeded your quota. But don't you worry my friend! Just take a deep breath and give it a minute. Everything will be alright!`);
       return;
     }
 
@@ -118,12 +118,12 @@ const Home: NextPage = () => {
       generateGita(e);
     }
   }}
-  className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500 mr-2"
+  className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-gray-500 focus:border-gray-500 mr-2"
   placeholder="How can I find inner peace?"
 />
           {!loading && (
             <button
-              className="bg-black rounded-xl text-white font-base p-4 hover:bg-black/80 w-half flex-none flex"
+              className="bg-black rounded-xl text-white font-bold p-4 hover:bg-black/80 w-half flex-none flex"
               onClick={(e) => generateGita(e)}
             >
               Find wisdom &rarr;
