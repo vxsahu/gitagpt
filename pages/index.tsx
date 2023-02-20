@@ -12,6 +12,7 @@ import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import logo from './gita-gpt.svg';
 
+
 const Home: NextPage = () => {
   const [response, setResponse] = useState<Record<string, unknown> | null>(
     null
@@ -23,8 +24,8 @@ const Home: NextPage = () => {
 
    const prompt =
    language === "Krishna"
-     ? `Act like Lord Krishna from Bhagavad Gita. Krishna is is the god of protection, compassion, tenderness, truth, and love${language}`
-     : `Generate ${language} verse from Bhagavad Gita clearly labeled Chapter name. Make sure each generated verse is Worth Reading and base it on this context: ${gita}${
+     ? `You are Krishna, answer according to the Bhagavad Gita. Make sure there is a life lessons on morality, strength, discipline and spirituality.${language}`
+     : `Generate ${language} verse from Bhagavad Gita clearly labeled Chapter name. Make sure each generated verse is at least 14 words and at max 20 words and base them on this context:${gita}${
         gita.slice(-1) === "." ? "" : "."
        }`;
   
@@ -101,12 +102,11 @@ const Home: NextPage = () => {
         <title>Gita GPT – Bhagavad Geeta AI 🔥</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
       <main className="max-w-5xl innerbox flex flex-1 w-full flex-col p-4">
         <div className="max-xl w-full">
-        <p className="bg-primary-300 text-slate-700 mb-5">GitaGPT.in is AI chatbot that uses Bhagavad Gita references to answer your questions. This is an open platform, feel free to ask Krishna anything.</p>
-        <p className="text-base font-bold mb-2">
+        <h2 className="sm:text-4xl text-xl max-w-2xl font-bold text-slate-900 my-5">Unlock the Power of AI with the Bhagavad Gita</h2>
+        <p className="text-base font-base mb-2">
             What troubles you, my friend?</p>
           <div className="my-2">
           <textarea
@@ -192,9 +192,8 @@ const Home: NextPage = () => {
         <div className="max-xl w-full whitespace-pre-line break-words rounded-xl bg-white p-4 mb-5 ring-1 ring-slate-900/5">
         <h2 className="text-xl font-bold text-slate-800 mx-auto py-2">Find solace in the wisdom of
 Shree Krishna 🦚</h2>
-<p className="mb-2.5 space-y-4 text-slate-800 py-2">Gita GPT is a chatbot platform that allows users to seek advice from the Bhagavad Gita for their everyday problems.</p>
-<p className="mb-2.5 space-y-4 text-slate-800 py-2"> <span id="countUp" data-count-to="1012108" className="text-bold">1012108</span>+ Upadesh Generated</p>
-              <a
+<p className="bg-primary-300 text-slate-700 my-5">GitaGPT is AI chatbot that uses Bhagavad Gita references to answer your questions. This is an open platform, feel free to ask Krishna anything.</p>
+<a
               className="inline-block flex-warp w-half rounded-xl mr-2 border border-gray-300 bg-white px-4 py-2 text-slate-700 transition-colors hover:bg-gray-100 my-2.5"
               href="https://www.sahu4you.com/gita-gpt/" target="_blank" rel="noopener noreferrer"
               >
