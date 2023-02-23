@@ -14,6 +14,7 @@ import logo from './gita-gpt.svg';
 
 
 const Home: NextPage = () => {
+  // Adding a comment
   const [response, setResponse] = useState<Record<string, unknown> | null>(
     null
   );
