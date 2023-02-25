@@ -1,4 +1,4 @@
-# Gita GPT -  Bhagavad Gita AI to answer questions
+# Gita GPT – Bhagavad Gita AI to answer questions
 
 [![Bhagavad Gita with AI](./public/og-image.png)](https://www.gitagpt.in)
 
