@@ -76,31 +76,33 @@ export default function Example() {
 
               <Disclosure.Button
                 as="a"
-                href="https://www.gitagpt.in/tools/kanha"
+                href="https://www.gitagpt.in/"
                 className="block border-l-4 border-primary-500 hover:bg-primary-100 py-2 pl-3 pr-4 text-base font-medium text-gray-500"
               >
-                Kahna
+				  <svg id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{fill:#134563;}
+</style><g><g id="Icon-Heart" transform="translate(178.000000, 230.000000)"><path className="st0" d="M-146-177.1l-0.8-0.7c-18.2-14.8-23.1-20-23.1-28.5c0-7,5.7-12.6,12.6-12.6     c5.8,0,9.1,3.3,11.3,5.8c2.2-2.5,5.5-5.8,11.3-5.8c7,0,12.6,5.7,12.6,12.6c0,8.5-4.9,13.7-23.1,28.5L-146-177.1L-146-177.1z      M-157.3-216.3c-5.5,0-10,4.5-10,10c0,7.3,4.6,12.1,21.3,25.8c16.7-13.7,21.3-18.5,21.3-25.8c0-5.5-4.5-10-10-10     c-5,0-7.7,3-9.8,5.4l-1.5,1.7l-1.5-1.7C-149.6-213.3-152.3-216.3-157.3-216.3L-157.3-216.3z" id="Fill-18"/></g></g></svg>
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="https://www.gitagpt.in/tools/radha-krishna"
+                href="https://www.gitagpt.in/about/"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
-                Radhe Krishna
+                About
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="https://www.gitagpt.in/tools/yogeshwar"
+                href="https://www.gitagpt.in/contact/"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
-                Yogeshwar
+                Contact
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="https://www.gitagpt.in/tools/dwarkadhish"
+                href="https://www.gitagpt.in/blog/"
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
               >
-                Dwarkadhish
+                Blog
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>
