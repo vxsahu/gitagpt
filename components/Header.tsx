@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 export default function Header() {
   return (
@@ -16,12 +17,9 @@ export default function Header() {
         />
       </Link>
       </div>
-      <div className="gg-menu flex items-center">
-        <Link href="https://twitter.com/Gita_GPT"
-        className="px-2 space-x-3 max-w-5xl align-center innerbox flex">
-        <p className="text-slate-800 px-4">Twitter</p>
-      </Link>
+      <div className="gg-menu items-center">
       </div>
+      <Navbar></Navbar>
       </div>
     </header>
   );
