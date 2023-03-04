@@ -101,11 +101,12 @@ const Home: NextPage = () => {
           <p className="text-base font-base mb-2">
             What troubles you, my friend?</p>
           <div className="my-2">
-            <input
-              value={gita}
-              onChange={(e) => setGita(e.target.value)}
-              className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black mt-5"
-              placeholder={"For example, 'How can I find inner peace?'"}
+          <input
+            type="text"
+            value={gita}
+            onChange={(e) => setGita(e.target.value)}
+            className="w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black mt-5"
+            placeholder={"For example, 'How can I find inner peace?'"}
             />
 
             {!loading && (
