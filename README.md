@@ -1,16 +1,17 @@
-# Gita GPT – Bhagavad Gita AI to answer questions
+# Gita GPT - AI Chatbot for Guidance Inspired by Bhagavad Gita
 
-[![Bhagavad Gita with AI](./public/og-image.png)](https://www.gitagpt.in)
+[![GitaGPT AI Chatbot](./public/Gitagpt.png)](https://www.gitagpt.in)
 
-Find solace in the wisdom of Shree Krishna
 
 ## What is GitaGPT?
 
-Gita GPT is AI Chatbot it reference bhagavad gita verse when a user ask any question. its open source anyone can use and ask question. GitaGPT is your virtual gateway to the teachings of Lord Krishna, as revealed in the Holy Bhagavad Gita.
+Gita GPT is an AI chatbot that offers spiritual guidance using the teachings of the Bhagavad Gita. Our chatbot uses natural language processing to understand and answer users' questions, providing insights and advice based on the ancient Hindu scripture. This repository includes all the code and documentation necessary to build and deploy the Gita GPT chatbot.
+
+With its unique combination of artificial intelligence and ancient wisdom, Gita GPT is the perfect tool for anyone seeking guidance and inspiration in their spiritual journey.
 
 Whether you're seeking a miracle to overcome a difficult situation, a powerful mantra to help you navigate daily life, or solutions to specific problems, GitaGPT is here to help.
 
-With our advanced algorithms and intuitive interface, GitaGPT makes it easy to integrate powerful language capabilities into your applications and workflows.
+[![Inspired by Bhagavad Gita](./public/og-image.png)](https://www.gitagpt.in)
 
 ## Purpose of Bhagavad Gita AI
 
@@ -18,18 +19,12 @@ Vikas Sahu, a tech-geek entrepreneur, saw the potential of using AI to bring anc
 
 Utilizing cutting-edge AI technology, Vikas worked tirelessly to develop a system that could understand and respond to users' questions in a natural, intuitive way. The result of his efforts is GitaGPT, a revolutionary tool that is changing the way people connect with spirituality and seek answers to life's questions.
 
-- With its accessible and user-friendly interface, GitaGPT is quickly becoming a popular resource for people from all walks of life, making it easier than ever to tap into the timeless wisdom of the Bhagavad Gita.
-- GitaGPT project provide Online Bhagavad Gita AI. Krishna Answer from Bhagavad Gita, which are the text of morality, strength, discipline and spirituality, so that friend Arjuna can be taken out of trouble.
-
-
 ## How works GitaGPT Chatbot
 
-This project uses the [OpenAI GPT-3 API](https://openai.com/api/) (specifically, text-davinci-003) and [Vercel Edge functions](https://vercel.com/features/edge-functions) with streaming. It constructs a prompt based on the form and user input, sends it to the GPT-3 API via a Vercel Edge function, then streams the response back to the application.
+This project uses the [OpenAI GPT-3.5 API](https://openai.com/api/) (specifically, text-davinci-003) and [Vercel Edge functions](https://vercel.com/features/edge-functions) with streaming. It constructs a prompt based on the form and user input, sends it to the GPT-3 API via a Vercel Edge function, then streams the response back to the application.
 
 Video and blog post coming soon on how to build apps with OpenAI and Vercel Edge functions!
 
 if Bhagavad Gita GPT not working, get touch with me on twitter @Gita_GPT
 
 ``
-
-[![GitaGPT AI](./public/Gitagpt.png)](https://www.gitagpt.in)
