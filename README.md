@@ -1,9 +1,9 @@
-# Gita GPT - AI Chatbot for Guidance Inspired by Bhagavad Gita
+# Gita GPT: Bhagavad Gita Inspired AI chatbot Gita GPT
 
 [![GitaGPT AI Chatbot](./public/Gitagpt.png)](https://www.gitagpt.in)
 
 
-## What is GitaGPT?
+## What GitaGPT Is and What It Does
 
 Gita GPT is an AI chatbot that offers spiritual guidance using the teachings of the Bhagavad Gita. Our chatbot uses natural language processing to understand and answer users' questions, providing insights and advice based on the ancient Hindu scripture. This repository includes all the code and documentation necessary to build and deploy the Gita GPT chatbot.
 
