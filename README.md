@@ -1,4 +1,4 @@
-# Gita GPT - AI Chatbot for Guidance Inspired by Bhagavad Gita
+# Gita GPT: Bhagavad Gita Inspired AI chatbot
 
 [![GitaGPT AI Chatbot](./public/Gitagpt.png)](https://www.gitagpt.in)
 
